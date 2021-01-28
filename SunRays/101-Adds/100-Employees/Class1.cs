@@ -7,6 +7,6 @@ using System.Threading.Tasks;
 namespace SunRays._101_Adds._100_Employees
 {
     class Class1
-    {
+    { 
     }
 }

@@ -1,7 +1,4 @@
-﻿
-
- 
-using DevExpress.XtraGrid.Views.Grid;
+﻿using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraSplashScreen;
 using MaterialSkin;
 using System;
