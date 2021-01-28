@@ -100,7 +100,6 @@
     <Compile Include="100-General\FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="101-Adds\100-Employees\Class1.cs" />
     <Compile Include="101-Adds\100-Employees\FrmAddEmployees.cs">
       <SubType>Form</SubType>
     </Compile>
