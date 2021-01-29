@@ -1,0 +1,2870 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DB_A65D4E_SolarEnergyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BillDocument">
+          <Key>
+            <PropertyRef Name="BillDocumentId" />
+          </Key>
+          <Property Name="BillDocumentId" Type="bigint" Nullable="false" />
+          <Property Name="Supplier_id" Type="bigint" Nullable="false" />
+          <Property Name="ReasonCatch" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="CatchAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="date" Nullable="false" />
+          <Property Name="Create_Date" Type="date" Nullable="false" />
+          <Property Name="IsDeleted" Type="int" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Branch">
+          <Key>
+            <PropertyRef Name="BranchId" />
+          </Key>
+          <Property Name="BranchId" Type="bigint" Nullable="false" />
+          <Property Name="BranchName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="date" Nullable="false" />
+          <Property Name="Created_Date" Type="date" Nullable="false" />
+          <Property Name="IsDeleted" Type="int" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="CustomerId" Type="bigint" Nullable="false" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="Phone2" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="National_Id" Type="nvarchar" MaxLength="14" Nullable="false" />
+          <Property Name="Country" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CustomerAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="date" Nullable="false" />
+          <Property Name="Created_Date" Type="date" Nullable="false" />
+          <Property Name="IsDeleted" Type="int" Nullable="false" />
+          <Property Name="last_Modified_user" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DepartmentId" />
+          </Key>
+          <Property Name="DepartmentId" Type="bigint" Nullable="false" />
+          <Property Name="DepartmentName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="date" Nullable="false" />
+          <Property Name="Created_Date" Type="date" Nullable="false" />
+          <Property Name="IsDeleted" Type="int" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Discount">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DiscountCode" Type="int" Nullable="false" />
+          <Property Name="DiscountName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DisposalDocument">
+          <Key>
+            <PropertyRef Name="DisposalDocumentId" />
+          </Key>
+          <Property Name="DisposalDocumentId" Type="bigint" Nullable="false" />
+          <Property Name="Customer_Id" Type="bigint" Nullable="false" />
+          <Property Name="ReasonCatch" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="CatchAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SataeDone" Type="int" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="date" Nullable="false" />
+          <Property Name="Create_Date" Type="date" Nullable="false" />
+          <Property Name="isDeleted" Type="int" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeId" />
+          </Key>
+          <Property Name="EmployeeId" Type="bigint" Nullable="false" />
+          <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="Phone2" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="LandLine" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="National_Id" Type="nvarchar" MaxLength="14" Nullable="false" />
+          <Property Name="EmployeeAddress1" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="EmployeeAddress2" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Birthdate" Type="date" Nullable="false" />
+          <Property Name="HiringDate" Type="date" Nullable="false" />
+          <Property Name="Natinality" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Job_Id" Type="bigint" Nullable="false" />
+          <Property Name="Department_Id" Type="bigint" Nullable="false" />
+          <Property Name="Gender" Type="int" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="date" Nullable="false" />
+          <Property Name="Created_Date" Type="date" Nullable="false" />
+          <Property Name="IsDeleted" Type="int" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="bigint" Nullable="false" />
+          <Property Name="Branch_Id" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EndSalary">
+          <Key>
+            <PropertyRef Name="EndSalaryId" />
+          </Key>
+          <Property Name="EndSalaryId" Type="bigint" Nullable="false" />
+          <Property Name="Id_Employee" Type="bigint" Nullable="false" />
+          <Property Name="PaidHolidays" Type="int" Nullable="false" />
+          <Property Name="Bonus" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="Cut" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="DateFrom" Type="date" Nullable="false" />
+          <Property Name="DateTo" Type="date" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="bigint" Nullable="false" />
+          <Property Name="Create_Date" Type="date" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="date" Nullable="false" />
+          <Property Name="IsDeleted" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Expenses">
+          <Key>
+            <PropertyRef Name="ExpensesId" />
+          </Key>
+          <Property Name="ExpensesId" Type="bigint" Nullable="false" />
+          <Property Name="ExpensesInfo" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ExpensesAmount" Type="varbinary" MaxLength="50" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="date" Nullable="false" />
+          <Property Name="Create_Date" Type="date" Nullable="false" />
+          <Property Name="IsDeleted" Type="int" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ExpensesLimit">
+          <Key>
+            <PropertyRef Name="ExpensesLimitId" />
+          </Key>
+          <Property Name="ExpensesLimitId" Type="bigint" Nullable="false" />
+          <Property Name="ExpensesLimit" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Last_Modified_date" Type="date" Nullable="false" />
+          <Property Name="Create_Date" Type="date" Nullable="false" />
+          <Property Name="IsDeleted" Type="int" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FixInvoice">
+          <Key>
+            <PropertyRef Name="SalesInvoice_Id" />
+          </Key>
+          <Property Name="FixInvoice" Type="bigint" Nullable="false" />
+          <Property Name="SalesInvoice_Id" Type="bigint" Nullable="false" />
+          <Property Name="Customer_Id" Type="bigint" Nullable="false" />
+          <Property Name="VisitReason" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="VisitAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="date" Nullable="false" />
+          <Property Name="Create_Date" Type="date" Nullable="false" />
+          <Property Name="IsDeleted" Type="int" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Incentive">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IncentiveCode" Type="int" Nullable="false" />
+          <Property Name="IncentiveName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Job">
+          <Key>
+            <PropertyRef Name="JobId" />
+          </Key>
+          <Property Name="JobId" Type="bigint" Nullable="false" />
+          <Property Name="JobName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Department_Id" Type="bigint" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="date" Nullable="false" />
+          <Property Name="Create_Date" Type="date" Nullable="false" />
+          <Property Name="IsDeleted" Type="int" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="bigint" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ProductType_Id" Type="bigint" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="date" Nullable="false" />
+          <Property Name="Create_Date" Type="date" Nullable="false" />
+          <Property Name="IsDeleted" Type="int" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductStore">
+          <Key>
+            <PropertyRef Name="ProdutStoreId" />
+          </Key>
+          <Property Name="ProdutStoreId" Type="bigint" Nullable="false" />
+          <Property Name="Product_Id" Type="bigint" Nullable="false" />
+          <Property Name="Store_Id" Type="bigint" Nullable="false" />
+          <Property Name="Cost" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="PriceCommercial" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="PriceEnd" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="Quantity" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="date" Nullable="false" />
+          <Property Name="Create_date" Type="date" Nullable="false" />
+          <Property Name="IsDeleted" Type="int" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductType">
+          <Key>
+            <PropertyRef Name="ProductTypeId" />
+          </Key>
+          <Property Name="ProductTypeId" Type="bigint" Nullable="false" />
+          <Property Name="ProductTypeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="date" Nullable="false" />
+          <Property Name="Create_Date" Type="date" Nullable="false" />
+          <Property Name="IsDeleted" Type="int" Nullable="false" />
+          <Property Name="LastModified_User" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PurchaseInvoice">
+          <Key>
+            <PropertyRef Name="PurchaseInvoiceId" />
+          </Key>
+          <Property Name="PurchaseInvoiceId" Type="bigint" Nullable="false" />
+          <Property Name="TotalOres" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Discount" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="TotalNet" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="TotalRemain" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="date" Nullable="false" />
+          <Property Name="Create_Date" Type="date" Nullable="false" />
+          <Property Name="IsDeleted" Type="int" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PurchaseInvoiceDetails">
+          <Key>
+            <PropertyRef Name="PurchaseInvoiceDetailsId" />
+          </Key>
+          <Property Name="PurchaseInvoiceDetailsId" Type="bigint" Nullable="false" />
+          <Property Name="Quantity" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="TotalOres" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="PurchaseInvoice_Id" Type="bigint" Nullable="false" />
+          <Property Name="Product_Id" Type="bigint" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="date" Nullable="false" />
+          <Property Name="Create_Date" Type="date" Nullable="false" />
+          <Property Name="IsDeleted" Type="int" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RequestCycle">
+          <Key>
+            <PropertyRef Name="RequestCycleId" />
+          </Key>
+          <Property Name="RequestCycleId" Type="bigint" Nullable="false" />
+          <Property Name="Department_Id" Type="bigint" Nullable="false" />
+          <Property Name="Invoice_Id" Type="bigint" Nullable="false" />
+          <Property Name="Last_Modified_date" Type="date" Nullable="false" />
+          <Property Name="Create_Date" Type="date" Nullable="false" />
+          <Property Name="IsDeleted" Type="int" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SafeHouse">
+          <Key>
+            <PropertyRef Name="SafehouseId" />
+          </Key>
+          <Property Name="SafehouseId" Type="bigint" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="date" Nullable="false" />
+          <Property Name="Create_Date" Type="date" Nullable="false" />
+          <Property Name="IsDeleted" Type="int" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="bigint" Nullable="false" />
+          <Property Name="FirstPeriodCredit" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="SalesInvoiceNetTotal" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="PurchaseInvoiceNetTotal" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="CmpanyExpenses" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="DisposalDocumentAmount" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="BillDocumentAmount" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Salary">
+          <Key>
+            <PropertyRef Name="SalaryId" />
+          </Key>
+          <Property Name="SalaryId" Type="bigint" Nullable="false" />
+          <Property Name="Salary" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="Id_Employee" Type="bigint" Nullable="false" />
+          <Property Name="NumHoliday" Type="int" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="date" Nullable="false" />
+          <Property Name="Created_Date" Type="date" Nullable="false" />
+          <Property Name="IsDeleted" Type="int" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SalaryTransaction">
+          <Key>
+            <PropertyRef Name="SalaryTransactionId" />
+          </Key>
+          <Property Name="SalaryTransactionId" Type="bigint" Nullable="false" />
+          <Property Name="SalaryTransaction" Type="bigint" Nullable="false" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="IssuedDate" Type="date" Nullable="false" />
+          <Property Name="Id_Employee" Type="bigint" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="date" Nullable="false" />
+          <Property Name="Create_Date" Type="date" Nullable="false" />
+          <Property Name="IsDeleted" Type="int" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SalesInvoice">
+          <Key>
+            <PropertyRef Name="InvoiceId" />
+          </Key>
+          <Property Name="InvoiceId" Type="bigint" Nullable="false" />
+          <Property Name="TotalProduct" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="Discount" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="TotalNet" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="TotalRemain" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="Last_Modified_Date" Type="date" Nullable="false" />
+          <Property Name="Create_Date" Type="date" Nullable="false" />
+          <Property Name="IsDeleted" Type="int" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SalesInvoiceDetail">
+          <Key>
+            <PropertyRef Name="InvoiceDetailsId" />
+          </Key>
+          <Property Name="InvoiceDetailsId" Type="bigint" Nullable="false" />
+          <Property Name="TypeInvoice_Id" Type="bigint" Nullable="false" />
+          <Property Name="Quantity" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="TotalProduct" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="SalesInvoice_Id" Type="bigint" Nullable="false" />
+          <Property Name="Product_Id" Type="bigint" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="date" Nullable="false" />
+          <Property Name="Create_Date" Type="date" Nullable="false" />
+          <Property Name="IsDeleted" Type="int" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Store">
+          <Key>
+            <PropertyRef Name="StoreId" />
+          </Key>
+          <Property Name="StoreId" Type="bigint" Nullable="false" />
+          <Property Name="StoreName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Branch_id" Type="bigint" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="date" Nullable="false" />
+          <Property Name="Created_Date" Type="date" Nullable="false" />
+          <Property Name="isDeleted" Type="int" Nullable="false" />
+          <Property Name="Last_Modifiied_User" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="SupplierId" />
+          </Key>
+          <Property Name="SupplierId" Type="bigint" Nullable="false" />
+          <Property Name="SupplierName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="Phone2" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NationalId" Type="nvarchar" MaxLength="14" Nullable="false" />
+          <Property Name="Country" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SupplierAddress" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="date" Nullable="false" />
+          <Property Name="Create_Date" Type="date" Nullable="false" />
+          <Property Name="IsDeleted" Type="int" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TypeInvoice">
+          <Key>
+            <PropertyRef Name="TypeInvoieId" />
+          </Key>
+          <Property Name="TypeInvoieId" Type="bigint" Nullable="false" />
+          <Property Name="TypeInvoiceName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="bigint" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PassKey" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="UserType_Id" Type="int" Nullable="false" />
+          <Property Name="Employee_Id" Type="int" Nullable="false" />
+          <Property Name="Last_Modified_date" Type="date" Nullable="false" />
+          <Property Name="Created_Date" Type="date" Nullable="false" />
+          <Property Name="IsDeleted" Type="int" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserTypes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Typename" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vacation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VacationCode" Type="int" Nullable="false" />
+          <Property Name="VacationName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_BillDocument_Supllier">
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+          <End Role="BillDocument" Type="Self.BillDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="SupplierId" />
+            </Principal>
+            <Dependent Role="BillDocument">
+              <PropertyRef Name="Supplier_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BillDocument_user">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="BillDocument" Type="Self.BillDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="BillDocument">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Branch_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Branch" Type="Self.Branch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Branch">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Department_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Department" Type="Self.Department" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Department">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DisposalDocument_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="DisposalDocument" Type="Self.DisposalDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="DisposalDocument">
+              <PropertyRef Name="Customer_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DisposalDocument_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="DisposalDocument" Type="Self.DisposalDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="DisposalDocument">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_Branch">
+          <End Role="Branch" Type="Self.Branch" Multiplicity="1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Branch">
+              <PropertyRef Name="BranchId" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="Branch_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentId" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="Department_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_Job">
+          <End Role="Job" Type="Self.Job" Multiplicity="1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job">
+              <PropertyRef Name="JobId" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="Job_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EndSalary_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="EndSalary" Type="Self.EndSalary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeId" />
+            </Principal>
+            <Dependent Role="EndSalary">
+              <PropertyRef Name="Id_Employee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EndSalary_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="EndSalary" Type="Self.EndSalary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="EndSalary">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExpensesLimit_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="ExpensesLimit" Type="Self.ExpensesLimit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="ExpensesLimit">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FixInvoice_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="FixInvoice" Type="Self.FixInvoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="FixInvoice">
+              <PropertyRef Name="Customer_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FixInvoice_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="FixInvoice" Type="Self.FixInvoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="FixInvoice">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Job_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="Job" Type="Self.Job" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentId" />
+            </Principal>
+            <Dependent Role="Job">
+              <PropertyRef Name="Department_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Job_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Job" Type="Self.Job" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Job">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_ProductType">
+          <End Role="ProductType" Type="Self.ProductType" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductType">
+              <PropertyRef Name="ProductTypeId" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ProductType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductStore_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="ProductStore" Type="Self.ProductStore" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="ProductStore">
+              <PropertyRef Name="Product_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductStore_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="1" />
+          <End Role="ProductStore" Type="Self.ProductStore" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="StoreId" />
+            </Principal>
+            <Dependent Role="ProductStore">
+              <PropertyRef Name="Store_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductStore_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="ProductStore" Type="Self.ProductStore" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="ProductStore">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductType_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="ProductType" Type="Self.ProductType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="ProductType">
+              <PropertyRef Name="LastModified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PurchaseInvoice_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="PurchaseInvoice" Type="Self.PurchaseInvoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="PurchaseInvoice">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PurchaseInvoiceDetails_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="PurchaseInvoiceDetails" Type="Self.PurchaseInvoiceDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="PurchaseInvoiceDetails">
+              <PropertyRef Name="Product_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PurchaseInvoiceDetails_PurchaseInvoice">
+          <End Role="PurchaseInvoice" Type="Self.PurchaseInvoice" Multiplicity="1" />
+          <End Role="PurchaseInvoiceDetails" Type="Self.PurchaseInvoiceDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PurchaseInvoice">
+              <PropertyRef Name="PurchaseInvoiceId" />
+            </Principal>
+            <Dependent Role="PurchaseInvoiceDetails">
+              <PropertyRef Name="PurchaseInvoice_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PurchaseInvoiceDetails_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="PurchaseInvoiceDetails" Type="Self.PurchaseInvoiceDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="PurchaseInvoiceDetails">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RequestCycle_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="RequestCycle" Type="Self.RequestCycle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentId" />
+            </Principal>
+            <Dependent Role="RequestCycle">
+              <PropertyRef Name="Department_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RequestCycle_Invoice">
+          <End Role="SalesInvoice" Type="Self.SalesInvoice" Multiplicity="1" />
+          <End Role="RequestCycle" Type="Self.RequestCycle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalesInvoice">
+              <PropertyRef Name="InvoiceId" />
+            </Principal>
+            <Dependent Role="RequestCycle">
+              <PropertyRef Name="Invoice_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RequestCycle_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="RequestCycle" Type="Self.RequestCycle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="RequestCycle">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SafeHouse_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="SafeHouse" Type="Self.SafeHouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="SafeHouse">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Salary_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="Salary" Type="Self.Salary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeId" />
+            </Principal>
+            <Dependent Role="Salary">
+              <PropertyRef Name="Id_Employee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Salary_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Salary" Type="Self.Salary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Salary">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalaryTransaction_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="SalaryTransaction" Type="Self.SalaryTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeId" />
+            </Principal>
+            <Dependent Role="SalaryTransaction">
+              <PropertyRef Name="Id_Employee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalaryTransaction_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="SalaryTransaction" Type="Self.SalaryTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="SalaryTransaction">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesInvoice_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="SalesInvoice" Type="Self.SalesInvoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="SalesInvoice">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesInvoiceDetail_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="SalesInvoiceDetail" Type="Self.SalesInvoiceDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="SalesInvoiceDetail">
+              <PropertyRef Name="Product_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesInvoiceDetail_SalesInvoice">
+          <End Role="SalesInvoice" Type="Self.SalesInvoice" Multiplicity="1" />
+          <End Role="SalesInvoiceDetail" Type="Self.SalesInvoiceDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalesInvoice">
+              <PropertyRef Name="InvoiceId" />
+            </Principal>
+            <Dependent Role="SalesInvoiceDetail">
+              <PropertyRef Name="SalesInvoice_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesInvoiceDetail_TypeInvoice">
+          <End Role="TypeInvoice" Type="Self.TypeInvoice" Multiplicity="1" />
+          <End Role="SalesInvoiceDetail" Type="Self.SalesInvoiceDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeInvoice">
+              <PropertyRef Name="TypeInvoieId" />
+            </Principal>
+            <Dependent Role="SalesInvoiceDetail">
+              <PropertyRef Name="TypeInvoice_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesInvoiceDetail_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="SalesInvoiceDetail" Type="Self.SalesInvoiceDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="SalesInvoiceDetail">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Store_Branch">
+          <End Role="Branch" Type="Self.Branch" Multiplicity="1" />
+          <End Role="Store" Type="Self.Store" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Branch">
+              <PropertyRef Name="BranchId" />
+            </Principal>
+            <Dependent Role="Store">
+              <PropertyRef Name="Branch_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Store_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Store" Type="Self.Store" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Store">
+              <PropertyRef Name="Last_Modifiied_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Supplier_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Supplier">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Customer">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="last_Modified_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="User1" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="User1">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_UserTypes">
+          <End Role="UserTypes" Type="Self.UserTypes" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="UserType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DB_A65D4E_SolarEnergyModelStoreContainer">
+          <EntitySet Name="BillDocument" EntityType="Self.BillDocument" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Branch" EntityType="Self.Branch" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Discount" EntityType="Self.Discount" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DisposalDocument" EntityType="Self.DisposalDocument" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EndSalary" EntityType="Self.EndSalary" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Expenses" EntityType="Self.Expenses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ExpensesLimit" EntityType="Self.ExpensesLimit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FixInvoice" EntityType="Self.FixInvoice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Incentive" EntityType="Self.Incentive" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Job" EntityType="Self.Job" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductStore" EntityType="Self.ProductStore" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductType" EntityType="Self.ProductType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PurchaseInvoice" EntityType="Self.PurchaseInvoice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PurchaseInvoiceDetails" EntityType="Self.PurchaseInvoiceDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RequestCycle" EntityType="Self.RequestCycle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SafeHouse" EntityType="Self.SafeHouse" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Salary" EntityType="Self.Salary" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SalaryTransaction" EntityType="Self.SalaryTransaction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SalesInvoice" EntityType="Self.SalesInvoice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SalesInvoiceDetail" EntityType="Self.SalesInvoiceDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Store" EntityType="Self.Store" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypeInvoice" EntityType="Self.TypeInvoice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserTypes" EntityType="Self.UserTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vacation" EntityType="Self.Vacation" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_BillDocument_Supllier" Association="Self.FK_BillDocument_Supllier">
+            <End Role="Supplier" EntitySet="Supplier" />
+            <End Role="BillDocument" EntitySet="BillDocument" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BillDocument_user" Association="Self.FK_BillDocument_user">
+            <End Role="User" EntitySet="User" />
+            <End Role="BillDocument" EntitySet="BillDocument" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Branch_User" Association="Self.FK_Branch_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Branch" EntitySet="Branch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Department_User" Association="Self.FK_Department_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Department" EntitySet="Department" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DisposalDocument_Customer" Association="Self.FK_DisposalDocument_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="DisposalDocument" EntitySet="DisposalDocument" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DisposalDocument_User" Association="Self.FK_DisposalDocument_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="DisposalDocument" EntitySet="DisposalDocument" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Branch" Association="Self.FK_Employee_Branch">
+            <End Role="Branch" EntitySet="Branch" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Department" Association="Self.FK_Employee_Department">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Job" Association="Self.FK_Employee_Job">
+            <End Role="Job" EntitySet="Job" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_User" Association="Self.FK_Employee_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EndSalary_Employee" Association="Self.FK_EndSalary_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="EndSalary" EntitySet="EndSalary" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EndSalary_User" Association="Self.FK_EndSalary_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="EndSalary" EntitySet="EndSalary" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExpensesLimit_User" Association="Self.FK_ExpensesLimit_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="ExpensesLimit" EntitySet="ExpensesLimit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FixInvoice_Customer" Association="Self.FK_FixInvoice_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="FixInvoice" EntitySet="FixInvoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FixInvoice_User" Association="Self.FK_FixInvoice_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="FixInvoice" EntitySet="FixInvoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Job_Department" Association="Self.FK_Job_Department">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="Job" EntitySet="Job" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Job_User" Association="Self.FK_Job_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Job" EntitySet="Job" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_ProductType" Association="Self.FK_Product_ProductType">
+            <End Role="ProductType" EntitySet="ProductType" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_User" Association="Self.FK_Product_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductStore_Product" Association="Self.FK_ProductStore_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="ProductStore" EntitySet="ProductStore" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductStore_Store" Association="Self.FK_ProductStore_Store">
+            <End Role="Store" EntitySet="Store" />
+            <End Role="ProductStore" EntitySet="ProductStore" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductStore_User" Association="Self.FK_ProductStore_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="ProductStore" EntitySet="ProductStore" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductType_User" Association="Self.FK_ProductType_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="ProductType" EntitySet="ProductType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PurchaseInvoice_User" Association="Self.FK_PurchaseInvoice_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="PurchaseInvoice" EntitySet="PurchaseInvoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PurchaseInvoiceDetails_Product" Association="Self.FK_PurchaseInvoiceDetails_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="PurchaseInvoiceDetails" EntitySet="PurchaseInvoiceDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PurchaseInvoiceDetails_PurchaseInvoice" Association="Self.FK_PurchaseInvoiceDetails_PurchaseInvoice">
+            <End Role="PurchaseInvoice" EntitySet="PurchaseInvoice" />
+            <End Role="PurchaseInvoiceDetails" EntitySet="PurchaseInvoiceDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PurchaseInvoiceDetails_User" Association="Self.FK_PurchaseInvoiceDetails_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="PurchaseInvoiceDetails" EntitySet="PurchaseInvoiceDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RequestCycle_Department" Association="Self.FK_RequestCycle_Department">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="RequestCycle" EntitySet="RequestCycle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RequestCycle_Invoice" Association="Self.FK_RequestCycle_Invoice">
+            <End Role="SalesInvoice" EntitySet="SalesInvoice" />
+            <End Role="RequestCycle" EntitySet="RequestCycle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RequestCycle_User" Association="Self.FK_RequestCycle_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="RequestCycle" EntitySet="RequestCycle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SafeHouse_User" Association="Self.FK_SafeHouse_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="SafeHouse" EntitySet="SafeHouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Salary_Employee" Association="Self.FK_Salary_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Salary" EntitySet="Salary" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Salary_User" Association="Self.FK_Salary_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Salary" EntitySet="Salary" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalaryTransaction_Employee" Association="Self.FK_SalaryTransaction_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="SalaryTransaction" EntitySet="SalaryTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalaryTransaction_User" Association="Self.FK_SalaryTransaction_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="SalaryTransaction" EntitySet="SalaryTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesInvoice_User" Association="Self.FK_SalesInvoice_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="SalesInvoice" EntitySet="SalesInvoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesInvoiceDetail_Product" Association="Self.FK_SalesInvoiceDetail_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="SalesInvoiceDetail" EntitySet="SalesInvoiceDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesInvoiceDetail_SalesInvoice" Association="Self.FK_SalesInvoiceDetail_SalesInvoice">
+            <End Role="SalesInvoice" EntitySet="SalesInvoice" />
+            <End Role="SalesInvoiceDetail" EntitySet="SalesInvoiceDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesInvoiceDetail_TypeInvoice" Association="Self.FK_SalesInvoiceDetail_TypeInvoice">
+            <End Role="TypeInvoice" EntitySet="TypeInvoice" />
+            <End Role="SalesInvoiceDetail" EntitySet="SalesInvoiceDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesInvoiceDetail_User" Association="Self.FK_SalesInvoiceDetail_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="SalesInvoiceDetail" EntitySet="SalesInvoiceDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store_Branch" Association="Self.FK_Store_Branch">
+            <End Role="Branch" EntitySet="Branch" />
+            <End Role="Store" EntitySet="Store" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store_User" Association="Self.FK_Store_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Store" EntitySet="Store" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Supplier_User" Association="Self.FK_Supplier_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Supplier" EntitySet="Supplier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Customer" Association="Self.FK_User_Customer">
+            <End Role="User" EntitySet="User" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_User" Association="Self.FK_User_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="User1" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_UserTypes" Association="Self.FK_User_UserTypes">
+            <End Role="UserTypes" EntitySet="UserTypes" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_A65D4E_SolarEnergyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BillDocument">
+          <Key>
+            <PropertyRef Name="BillDocumentId" />
+          </Key>
+          <Property Name="BillDocumentId" Type="Int64" Nullable="false" />
+          <Property Name="Supplier_id" Type="Int64" Nullable="false" />
+          <Property Name="ReasonCatch" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CatchAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Create_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IsDeleted" Type="Int32" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Supplier" Relationship="Self.FK_BillDocument_Supllier" FromRole="BillDocument" ToRole="Supplier" />
+          <NavigationProperty Name="User" Relationship="Self.FK_BillDocument_user" FromRole="BillDocument" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Branch">
+          <Key>
+            <PropertyRef Name="BranchId" />
+          </Key>
+          <Property Name="BranchId" Type="Int64" Nullable="false" />
+          <Property Name="BranchName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Created_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IsDeleted" Type="Int32" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Branch_User" FromRole="Branch" ToRole="User" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK_Employee_Branch" FromRole="Branch" ToRole="Employee" />
+          <NavigationProperty Name="Stores" Relationship="Self.FK_Store_Branch" FromRole="Branch" ToRole="Store" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="CustomerId" Type="Int64" Nullable="false" />
+          <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone2" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="National_Id" Type="String" MaxLength="14" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CustomerAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Created_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IsDeleted" Type="Int32" Nullable="false" />
+          <Property Name="last_Modified_user" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="DisposalDocuments" Relationship="Self.FK_DisposalDocument_Customer" FromRole="Customer" ToRole="DisposalDocument" />
+          <NavigationProperty Name="FixInvoices" Relationship="Self.FK_FixInvoice_Customer" FromRole="Customer" ToRole="FixInvoice" />
+          <NavigationProperty Name="User" Relationship="Self.FK_User_Customer" FromRole="Customer" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DepartmentId" />
+          </Key>
+          <Property Name="DepartmentId" Type="Int64" Nullable="false" />
+          <Property Name="DepartmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Created_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IsDeleted" Type="Int32" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Department_User" FromRole="Department" ToRole="User" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK_Employee_Department" FromRole="Department" ToRole="Employee" />
+          <NavigationProperty Name="Jobs" Relationship="Self.FK_Job_Department" FromRole="Department" ToRole="Job" />
+          <NavigationProperty Name="RequestCycles" Relationship="Self.FK_RequestCycle_Department" FromRole="Department" ToRole="RequestCycle" />
+        </EntityType>
+        <EntityType Name="Discount">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DiscountCode" Type="Int32" Nullable="false" />
+          <Property Name="DiscountName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DisposalDocument">
+          <Key>
+            <PropertyRef Name="DisposalDocumentId" />
+          </Key>
+          <Property Name="DisposalDocumentId" Type="Int64" Nullable="false" />
+          <Property Name="Customer_Id" Type="Int64" Nullable="false" />
+          <Property Name="ReasonCatch" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CatchAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SataeDone" Type="Int32" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Create_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="isDeleted" Type="Int32" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK_DisposalDocument_Customer" FromRole="DisposalDocument" ToRole="Customer" />
+          <NavigationProperty Name="User" Relationship="Self.FK_DisposalDocument_User" FromRole="DisposalDocument" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeId" />
+          </Key>
+          <Property Name="EmployeeId" Type="Int64" Nullable="false" />
+          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone2" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LandLine" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="National_Id" Type="String" MaxLength="14" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EmployeeAddress1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EmployeeAddress2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Birthdate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="HiringDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Natinality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Job_Id" Type="Int64" Nullable="false" />
+          <Property Name="Department_Id" Type="Int64" Nullable="false" />
+          <Property Name="Gender" Type="Int32" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Created_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IsDeleted" Type="Int32" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="Int64" Nullable="false" />
+          <Property Name="Branch_Id" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Branch" Relationship="Self.FK_Employee_Branch" FromRole="Employee" ToRole="Branch" />
+          <NavigationProperty Name="Department" Relationship="Self.FK_Employee_Department" FromRole="Employee" ToRole="Department" />
+          <NavigationProperty Name="Job" Relationship="Self.FK_Employee_Job" FromRole="Employee" ToRole="Job" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Employee_User" FromRole="Employee" ToRole="User" />
+          <NavigationProperty Name="EndSalaries" Relationship="Self.FK_EndSalary_Employee" FromRole="Employee" ToRole="EndSalary" />
+          <NavigationProperty Name="Salaries" Relationship="Self.FK_Salary_Employee" FromRole="Employee" ToRole="Salary" />
+          <NavigationProperty Name="SalaryTransactions" Relationship="Self.FK_SalaryTransaction_Employee" FromRole="Employee" ToRole="SalaryTransaction" />
+        </EntityType>
+        <EntityType Name="EndSalary">
+          <Key>
+            <PropertyRef Name="EndSalaryId" />
+          </Key>
+          <Property Name="EndSalaryId" Type="Int64" Nullable="false" />
+          <Property Name="Id_Employee" Type="Int64" Nullable="false" />
+          <Property Name="PaidHolidays" Type="Int32" Nullable="false" />
+          <Property Name="Bonus" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="Cut" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="DateFrom" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DateTo" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Last_Modified_User" Type="Int64" Nullable="false" />
+          <Property Name="Create_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Last_Modified_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IsDeleted" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_EndSalary_Employee" FromRole="EndSalary" ToRole="Employee" />
+          <NavigationProperty Name="User" Relationship="Self.FK_EndSalary_User" FromRole="EndSalary" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Expens">
+          <Key>
+            <PropertyRef Name="ExpensesId" />
+          </Key>
+          <Property Name="ExpensesId" Type="Int64" Nullable="false" />
+          <Property Name="ExpensesInfo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ExpensesAmount" Type="Binary" MaxLength="50" FixedLength="false" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Create_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IsDeleted" Type="Int32" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ExpensesLimit">
+          <Key>
+            <PropertyRef Name="ExpensesLimitId" />
+          </Key>
+          <Property Name="ExpensesLimitId" Type="Int64" Nullable="false" />
+          <Property Name="ExpensesLimit1" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Last_Modified_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Create_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IsDeleted" Type="Int32" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_ExpensesLimit_User" FromRole="ExpensesLimit" ToRole="User" />
+        </EntityType>
+        <EntityType Name="FixInvoice">
+          <Key>
+            <PropertyRef Name="SalesInvoice_Id" />
+          </Key>
+          <Property Name="FixInvoice1" Type="Int64" Nullable="false" />
+          <Property Name="SalesInvoice_Id" Type="Int64" Nullable="false" />
+          <Property Name="Customer_Id" Type="Int64" Nullable="false" />
+          <Property Name="VisitReason" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VisitAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Create_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IsDeleted" Type="Int32" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK_FixInvoice_Customer" FromRole="FixInvoice" ToRole="Customer" />
+          <NavigationProperty Name="User" Relationship="Self.FK_FixInvoice_User" FromRole="FixInvoice" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Incentive">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IncentiveCode" Type="Int32" Nullable="false" />
+          <Property Name="IncentiveName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Job">
+          <Key>
+            <PropertyRef Name="JobId" />
+          </Key>
+          <Property Name="JobId" Type="Int64" Nullable="false" />
+          <Property Name="JobName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Department_Id" Type="Int64" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Create_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IsDeleted" Type="Int32" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Department" Relationship="Self.FK_Job_Department" FromRole="Job" ToRole="Department" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK_Employee_Job" FromRole="Job" ToRole="Employee" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Job_User" FromRole="Job" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="Int64" Nullable="false" />
+          <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProductType_Id" Type="Int64" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Create_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IsDeleted" Type="Int32" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="ProductType" Relationship="Self.FK_Product_ProductType" FromRole="Product" ToRole="ProductType" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Product_User" FromRole="Product" ToRole="User" />
+          <NavigationProperty Name="ProductStores" Relationship="Self.FK_ProductStore_Product" FromRole="Product" ToRole="ProductStore" />
+          <NavigationProperty Name="PurchaseInvoiceDetails" Relationship="Self.FK_PurchaseInvoiceDetails_Product" FromRole="Product" ToRole="PurchaseInvoiceDetails" />
+          <NavigationProperty Name="SalesInvoiceDetails" Relationship="Self.FK_SalesInvoiceDetail_Product" FromRole="Product" ToRole="SalesInvoiceDetail" />
+        </EntityType>
+        <EntityType Name="ProductStore">
+          <Key>
+            <PropertyRef Name="ProdutStoreId" />
+          </Key>
+          <Property Name="ProdutStoreId" Type="Int64" Nullable="false" />
+          <Property Name="Product_Id" Type="Int64" Nullable="false" />
+          <Property Name="Store_Id" Type="Int64" Nullable="false" />
+          <Property Name="Cost" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="PriceCommercial" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="PriceEnd" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="Quantity" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Create_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IsDeleted" Type="Int32" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_ProductStore_Product" FromRole="ProductStore" ToRole="Product" />
+          <NavigationProperty Name="Store" Relationship="Self.FK_ProductStore_Store" FromRole="ProductStore" ToRole="Store" />
+          <NavigationProperty Name="User" Relationship="Self.FK_ProductStore_User" FromRole="ProductStore" ToRole="User" />
+        </EntityType>
+        <EntityType Name="ProductType">
+          <Key>
+            <PropertyRef Name="ProductTypeId" />
+          </Key>
+          <Property Name="ProductTypeId" Type="Int64" Nullable="false" />
+          <Property Name="ProductTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Create_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IsDeleted" Type="Int32" Nullable="false" />
+          <Property Name="LastModified_User" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Products" Relationship="Self.FK_Product_ProductType" FromRole="ProductType" ToRole="Product" />
+          <NavigationProperty Name="User" Relationship="Self.FK_ProductType_User" FromRole="ProductType" ToRole="User" />
+        </EntityType>
+        <EntityType Name="PurchaseInvoice">
+          <Key>
+            <PropertyRef Name="PurchaseInvoiceId" />
+          </Key>
+          <Property Name="PurchaseInvoiceId" Type="Int64" Nullable="false" />
+          <Property Name="TotalOres" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Discount" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="TotalNet" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="TotalRemain" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Create_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IsDeleted" Type="Int32" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_PurchaseInvoice_User" FromRole="PurchaseInvoice" ToRole="User" />
+          <NavigationProperty Name="PurchaseInvoiceDetails" Relationship="Self.FK_PurchaseInvoiceDetails_PurchaseInvoice" FromRole="PurchaseInvoice" ToRole="PurchaseInvoiceDetails" />
+        </EntityType>
+        <EntityType Name="PurchaseInvoiceDetail">
+          <Key>
+            <PropertyRef Name="PurchaseInvoiceDetailsId" />
+          </Key>
+          <Property Name="PurchaseInvoiceDetailsId" Type="Int64" Nullable="false" />
+          <Property Name="Quantity" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="TotalOres" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="PurchaseInvoice_Id" Type="Int64" Nullable="false" />
+          <Property Name="Product_Id" Type="Int64" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Create_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IsDeleted" Type="Int32" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_PurchaseInvoiceDetails_Product" FromRole="PurchaseInvoiceDetails" ToRole="Product" />
+          <NavigationProperty Name="PurchaseInvoice" Relationship="Self.FK_PurchaseInvoiceDetails_PurchaseInvoice" FromRole="PurchaseInvoiceDetails" ToRole="PurchaseInvoice" />
+          <NavigationProperty Name="User" Relationship="Self.FK_PurchaseInvoiceDetails_User" FromRole="PurchaseInvoiceDetails" ToRole="User" />
+        </EntityType>
+        <EntityType Name="RequestCycle">
+          <Key>
+            <PropertyRef Name="RequestCycleId" />
+          </Key>
+          <Property Name="RequestCycleId" Type="Int64" Nullable="false" />
+          <Property Name="Department_Id" Type="Int64" Nullable="false" />
+          <Property Name="Invoice_Id" Type="Int64" Nullable="false" />
+          <Property Name="Last_Modified_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Create_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IsDeleted" Type="Int32" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Department" Relationship="Self.FK_RequestCycle_Department" FromRole="RequestCycle" ToRole="Department" />
+          <NavigationProperty Name="SalesInvoice" Relationship="Self.FK_RequestCycle_Invoice" FromRole="RequestCycle" ToRole="SalesInvoice" />
+          <NavigationProperty Name="User" Relationship="Self.FK_RequestCycle_User" FromRole="RequestCycle" ToRole="User" />
+        </EntityType>
+        <EntityType Name="SafeHouse">
+          <Key>
+            <PropertyRef Name="SafehouseId" />
+          </Key>
+          <Property Name="SafehouseId" Type="Int64" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Create_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IsDeleted" Type="Int32" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="Int64" Nullable="false" />
+          <Property Name="FirstPeriodCredit" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="SalesInvoiceNetTotal" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="PurchaseInvoiceNetTotal" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="CmpanyExpenses" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="DisposalDocumentAmount" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="BillDocumentAmount" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_SafeHouse_User" FromRole="SafeHouse" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Salary">
+          <Key>
+            <PropertyRef Name="SalaryId" />
+          </Key>
+          <Property Name="SalaryId" Type="Int64" Nullable="false" />
+          <Property Name="Salary1" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="Id_Employee" Type="Int64" Nullable="false" />
+          <Property Name="NumHoliday" Type="Int32" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Created_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IsDeleted" Type="Int32" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Salary_Employee" FromRole="Salary" ToRole="Employee" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Salary_User" FromRole="Salary" ToRole="User" />
+        </EntityType>
+        <EntityType Name="SalaryTransaction">
+          <Key>
+            <PropertyRef Name="SalaryTransactionId" />
+          </Key>
+          <Property Name="SalaryTransactionId" Type="Int64" Nullable="false" />
+          <Property Name="SalaryTransaction1" Type="Int64" Nullable="false" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="IssuedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Id_Employee" Type="Int64" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Create_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IsDeleted" Type="Int32" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_SalaryTransaction_Employee" FromRole="SalaryTransaction" ToRole="Employee" />
+          <NavigationProperty Name="User" Relationship="Self.FK_SalaryTransaction_User" FromRole="SalaryTransaction" ToRole="User" />
+        </EntityType>
+        <EntityType Name="SalesInvoice">
+          <Key>
+            <PropertyRef Name="InvoiceId" />
+          </Key>
+          <Property Name="InvoiceId" Type="Int64" Nullable="false" />
+          <Property Name="TotalProduct" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="Discount" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="TotalNet" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="TotalRemain" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="Last_Modified_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Create_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IsDeleted" Type="Int32" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="RequestCycles" Relationship="Self.FK_RequestCycle_Invoice" FromRole="SalesInvoice" ToRole="RequestCycle" />
+          <NavigationProperty Name="User" Relationship="Self.FK_SalesInvoice_User" FromRole="SalesInvoice" ToRole="User" />
+          <NavigationProperty Name="SalesInvoiceDetails" Relationship="Self.FK_SalesInvoiceDetail_SalesInvoice" FromRole="SalesInvoice" ToRole="SalesInvoiceDetail" />
+        </EntityType>
+        <EntityType Name="SalesInvoiceDetail">
+          <Key>
+            <PropertyRef Name="InvoiceDetailsId" />
+          </Key>
+          <Property Name="InvoiceDetailsId" Type="Int64" Nullable="false" />
+          <Property Name="TypeInvoice_Id" Type="Int64" Nullable="false" />
+          <Property Name="Quantity" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="TotalProduct" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="SalesInvoice_Id" Type="Int64" Nullable="false" />
+          <Property Name="Product_Id" Type="Int64" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Create_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IsDeleted" Type="Int32" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_SalesInvoiceDetail_Product" FromRole="SalesInvoiceDetail" ToRole="Product" />
+          <NavigationProperty Name="SalesInvoice" Relationship="Self.FK_SalesInvoiceDetail_SalesInvoice" FromRole="SalesInvoiceDetail" ToRole="SalesInvoice" />
+          <NavigationProperty Name="TypeInvoice" Relationship="Self.FK_SalesInvoiceDetail_TypeInvoice" FromRole="SalesInvoiceDetail" ToRole="TypeInvoice" />
+          <NavigationProperty Name="User" Relationship="Self.FK_SalesInvoiceDetail_User" FromRole="SalesInvoiceDetail" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Store">
+          <Key>
+            <PropertyRef Name="StoreId" />
+          </Key>
+          <Property Name="StoreId" Type="Int64" Nullable="false" />
+          <Property Name="StoreName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Branch_id" Type="Int64" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Created_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="isDeleted" Type="Int32" Nullable="false" />
+          <Property Name="Last_Modifiied_User" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Branch" Relationship="Self.FK_Store_Branch" FromRole="Store" ToRole="Branch" />
+          <NavigationProperty Name="ProductStores" Relationship="Self.FK_ProductStore_Store" FromRole="Store" ToRole="ProductStore" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Store_User" FromRole="Store" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="SupplierId" />
+          </Key>
+          <Property Name="SupplierId" Type="Int64" Nullable="false" />
+          <Property Name="SupplierName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone2" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NationalId" Type="String" MaxLength="14" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SupplierAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Last_Modified_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Create_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IsDeleted" Type="Int32" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="BillDocuments" Relationship="Self.FK_BillDocument_Supllier" FromRole="Supplier" ToRole="BillDocument" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Supplier_User" FromRole="Supplier" ToRole="User" />
+        </EntityType>
+        <EntityType Name="TypeInvoice">
+          <Key>
+            <PropertyRef Name="TypeInvoieId" />
+          </Key>
+          <Property Name="TypeInvoieId" Type="Int64" Nullable="false" />
+          <Property Name="TypeInvoiceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="SalesInvoiceDetails" Relationship="Self.FK_SalesInvoiceDetail_TypeInvoice" FromRole="TypeInvoice" ToRole="SalesInvoiceDetail" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int64" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PassKey" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserType_Id" Type="Int32" Nullable="false" />
+          <Property Name="Employee_Id" Type="Int32" Nullable="false" />
+          <Property Name="Last_Modified_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Created_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IsDeleted" Type="Int32" Nullable="false" />
+          <Property Name="Last_Modified_User" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="BillDocuments" Relationship="Self.FK_BillDocument_user" FromRole="User" ToRole="BillDocument" />
+          <NavigationProperty Name="Branches" Relationship="Self.FK_Branch_User" FromRole="User" ToRole="Branch" />
+          <NavigationProperty Name="Customers" Relationship="Self.FK_User_Customer" FromRole="User" ToRole="Customer" />
+          <NavigationProperty Name="Departments" Relationship="Self.FK_Department_User" FromRole="User" ToRole="Department" />
+          <NavigationProperty Name="DisposalDocuments" Relationship="Self.FK_DisposalDocument_User" FromRole="User" ToRole="DisposalDocument" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK_Employee_User" FromRole="User" ToRole="Employee" />
+          <NavigationProperty Name="EndSalaries" Relationship="Self.FK_EndSalary_User" FromRole="User" ToRole="EndSalary" />
+          <NavigationProperty Name="ExpensesLimits" Relationship="Self.FK_ExpensesLimit_User" FromRole="User" ToRole="ExpensesLimit" />
+          <NavigationProperty Name="FixInvoices" Relationship="Self.FK_FixInvoice_User" FromRole="User" ToRole="FixInvoice" />
+          <NavigationProperty Name="Jobs" Relationship="Self.FK_Job_User" FromRole="User" ToRole="Job" />
+          <NavigationProperty Name="Products" Relationship="Self.FK_Product_User" FromRole="User" ToRole="Product" />
+          <NavigationProperty Name="ProductStores" Relationship="Self.FK_ProductStore_User" FromRole="User" ToRole="ProductStore" />
+          <NavigationProperty Name="ProductTypes" Relationship="Self.FK_ProductType_User" FromRole="User" ToRole="ProductType" />
+          <NavigationProperty Name="PurchaseInvoices" Relationship="Self.FK_PurchaseInvoice_User" FromRole="User" ToRole="PurchaseInvoice" />
+          <NavigationProperty Name="PurchaseInvoiceDetails" Relationship="Self.FK_PurchaseInvoiceDetails_User" FromRole="User" ToRole="PurchaseInvoiceDetails" />
+          <NavigationProperty Name="RequestCycles" Relationship="Self.FK_RequestCycle_User" FromRole="User" ToRole="RequestCycle" />
+          <NavigationProperty Name="SafeHouses" Relationship="Self.FK_SafeHouse_User" FromRole="User" ToRole="SafeHouse" />
+          <NavigationProperty Name="Salaries" Relationship="Self.FK_Salary_User" FromRole="User" ToRole="Salary" />
+          <NavigationProperty Name="SalaryTransactions" Relationship="Self.FK_SalaryTransaction_User" FromRole="User" ToRole="SalaryTransaction" />
+          <NavigationProperty Name="SalesInvoices" Relationship="Self.FK_SalesInvoice_User" FromRole="User" ToRole="SalesInvoice" />
+          <NavigationProperty Name="SalesInvoiceDetails" Relationship="Self.FK_SalesInvoiceDetail_User" FromRole="User" ToRole="SalesInvoiceDetail" />
+          <NavigationProperty Name="Stores" Relationship="Self.FK_Store_User" FromRole="User" ToRole="Store" />
+          <NavigationProperty Name="Suppliers" Relationship="Self.FK_Supplier_User" FromRole="User" ToRole="Supplier" />
+          <NavigationProperty Name="User1" Relationship="Self.FK_User_User" FromRole="User" ToRole="User1" />
+          <NavigationProperty Name="User2" Relationship="Self.FK_User_User" FromRole="User1" ToRole="User" />
+          <NavigationProperty Name="UserType" Relationship="Self.FK_User_UserTypes" FromRole="User" ToRole="UserTypes" />
+        </EntityType>
+        <EntityType Name="UserType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Typename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_User_UserTypes" FromRole="UserTypes" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Vacation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VacationCode" Type="Int32" Nullable="false" />
+          <Property Name="VacationName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_BillDocument_Supllier">
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+          <End Role="BillDocument" Type="Self.BillDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="SupplierId" />
+            </Principal>
+            <Dependent Role="BillDocument">
+              <PropertyRef Name="Supplier_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BillDocument_user">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="BillDocument" Type="Self.BillDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="BillDocument">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Branch_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Branch" Type="Self.Branch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Branch">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_Branch">
+          <End Role="Branch" Type="Self.Branch" Multiplicity="1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Branch">
+              <PropertyRef Name="BranchId" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="Branch_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Store_Branch">
+          <End Role="Branch" Type="Self.Branch" Multiplicity="1" />
+          <End Role="Store" Type="Self.Store" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Branch">
+              <PropertyRef Name="BranchId" />
+            </Principal>
+            <Dependent Role="Store">
+              <PropertyRef Name="Branch_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DisposalDocument_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="DisposalDocument" Type="Self.DisposalDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="DisposalDocument">
+              <PropertyRef Name="Customer_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FixInvoice_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="FixInvoice" Type="Self.FixInvoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="FixInvoice">
+              <PropertyRef Name="Customer_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Customer">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="last_Modified_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Department_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Department" Type="Self.Department" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Department">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentId" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="Department_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Job_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="Job" Type="Self.Job" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentId" />
+            </Principal>
+            <Dependent Role="Job">
+              <PropertyRef Name="Department_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RequestCycle_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="RequestCycle" Type="Self.RequestCycle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentId" />
+            </Principal>
+            <Dependent Role="RequestCycle">
+              <PropertyRef Name="Department_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DisposalDocument_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="DisposalDocument" Type="Self.DisposalDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="DisposalDocument">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_Job">
+          <End Role="Job" Type="Self.Job" Multiplicity="1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job">
+              <PropertyRef Name="JobId" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="Job_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EndSalary_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="EndSalary" Type="Self.EndSalary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeId" />
+            </Principal>
+            <Dependent Role="EndSalary">
+              <PropertyRef Name="Id_Employee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Salary_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="Salary" Type="Self.Salary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeId" />
+            </Principal>
+            <Dependent Role="Salary">
+              <PropertyRef Name="Id_Employee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalaryTransaction_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="SalaryTransaction" Type="Self.SalaryTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeId" />
+            </Principal>
+            <Dependent Role="SalaryTransaction">
+              <PropertyRef Name="Id_Employee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EndSalary_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="EndSalary" Type="Self.EndSalary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="EndSalary">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExpensesLimit_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="ExpensesLimit" Type="Self.ExpensesLimit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="ExpensesLimit">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FixInvoice_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="FixInvoice" Type="Self.FixInvoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="FixInvoice">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Job_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Job" Type="Self.Job" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Job">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_ProductType">
+          <End Role="ProductType" Type="Self.ProductType" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductType">
+              <PropertyRef Name="ProductTypeId" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ProductType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductStore_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="ProductStore" Type="Self.ProductStore" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="ProductStore">
+              <PropertyRef Name="Product_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PurchaseInvoiceDetails_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="PurchaseInvoiceDetails" Type="Self.PurchaseInvoiceDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="PurchaseInvoiceDetails">
+              <PropertyRef Name="Product_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesInvoiceDetail_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="SalesInvoiceDetail" Type="Self.SalesInvoiceDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="SalesInvoiceDetail">
+              <PropertyRef Name="Product_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductStore_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="1" />
+          <End Role="ProductStore" Type="Self.ProductStore" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="StoreId" />
+            </Principal>
+            <Dependent Role="ProductStore">
+              <PropertyRef Name="Store_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductStore_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="ProductStore" Type="Self.ProductStore" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="ProductStore">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductType_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="ProductType" Type="Self.ProductType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="ProductType">
+              <PropertyRef Name="LastModified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PurchaseInvoice_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="PurchaseInvoice" Type="Self.PurchaseInvoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="PurchaseInvoice">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PurchaseInvoiceDetails_PurchaseInvoice">
+          <End Role="PurchaseInvoice" Type="Self.PurchaseInvoice" Multiplicity="1" />
+          <End Role="PurchaseInvoiceDetails" Type="Self.PurchaseInvoiceDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PurchaseInvoice">
+              <PropertyRef Name="PurchaseInvoiceId" />
+            </Principal>
+            <Dependent Role="PurchaseInvoiceDetails">
+              <PropertyRef Name="PurchaseInvoice_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PurchaseInvoiceDetails_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="PurchaseInvoiceDetails" Type="Self.PurchaseInvoiceDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="PurchaseInvoiceDetails">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RequestCycle_Invoice">
+          <End Role="SalesInvoice" Type="Self.SalesInvoice" Multiplicity="1" />
+          <End Role="RequestCycle" Type="Self.RequestCycle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalesInvoice">
+              <PropertyRef Name="InvoiceId" />
+            </Principal>
+            <Dependent Role="RequestCycle">
+              <PropertyRef Name="Invoice_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RequestCycle_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="RequestCycle" Type="Self.RequestCycle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="RequestCycle">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SafeHouse_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="SafeHouse" Type="Self.SafeHouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="SafeHouse">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Salary_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Salary" Type="Self.Salary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Salary">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalaryTransaction_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="SalaryTransaction" Type="Self.SalaryTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="SalaryTransaction">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesInvoice_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="SalesInvoice" Type="Self.SalesInvoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="SalesInvoice">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesInvoiceDetail_SalesInvoice">
+          <End Role="SalesInvoice" Type="Self.SalesInvoice" Multiplicity="1" />
+          <End Role="SalesInvoiceDetail" Type="Self.SalesInvoiceDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalesInvoice">
+              <PropertyRef Name="InvoiceId" />
+            </Principal>
+            <Dependent Role="SalesInvoiceDetail">
+              <PropertyRef Name="SalesInvoice_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesInvoiceDetail_TypeInvoice">
+          <End Role="TypeInvoice" Type="Self.TypeInvoice" Multiplicity="1" />
+          <End Role="SalesInvoiceDetail" Type="Self.SalesInvoiceDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeInvoice">
+              <PropertyRef Name="TypeInvoieId" />
+            </Principal>
+            <Dependent Role="SalesInvoiceDetail">
+              <PropertyRef Name="TypeInvoice_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesInvoiceDetail_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="SalesInvoiceDetail" Type="Self.SalesInvoiceDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="SalesInvoiceDetail">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Store_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Store" Type="Self.Store" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Store">
+              <PropertyRef Name="Last_Modifiied_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Supplier_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Supplier">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="User1" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="User1">
+              <PropertyRef Name="Last_Modified_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_UserTypes">
+          <End Role="UserTypes" Type="Self.UserType" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="UserType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DB_A65D4E_SolarEnergyEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BillDocuments" EntityType="Self.BillDocument" />
+          <EntitySet Name="Branches" EntityType="Self.Branch" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="Departments" EntityType="Self.Department" />
+          <EntitySet Name="Discounts" EntityType="Self.Discount" />
+          <EntitySet Name="DisposalDocuments" EntityType="Self.DisposalDocument" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="EndSalaries" EntityType="Self.EndSalary" />
+          <EntitySet Name="Expenses" EntityType="Self.Expens" />
+          <EntitySet Name="ExpensesLimits" EntityType="Self.ExpensesLimit" />
+          <EntitySet Name="FixInvoices" EntityType="Self.FixInvoice" />
+          <EntitySet Name="Incentives" EntityType="Self.Incentive" />
+          <EntitySet Name="Jobs" EntityType="Self.Job" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="ProductStores" EntityType="Self.ProductStore" />
+          <EntitySet Name="ProductTypes" EntityType="Self.ProductType" />
+          <EntitySet Name="PurchaseInvoices" EntityType="Self.PurchaseInvoice" />
+          <EntitySet Name="PurchaseInvoiceDetails" EntityType="Self.PurchaseInvoiceDetail" />
+          <EntitySet Name="RequestCycles" EntityType="Self.RequestCycle" />
+          <EntitySet Name="SafeHouses" EntityType="Self.SafeHouse" />
+          <EntitySet Name="Salaries" EntityType="Self.Salary" />
+          <EntitySet Name="SalaryTransactions" EntityType="Self.SalaryTransaction" />
+          <EntitySet Name="SalesInvoices" EntityType="Self.SalesInvoice" />
+          <EntitySet Name="SalesInvoiceDetails" EntityType="Self.SalesInvoiceDetail" />
+          <EntitySet Name="Stores" EntityType="Self.Store" />
+          <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
+          <EntitySet Name="TypeInvoices" EntityType="Self.TypeInvoice" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="UserTypes" EntityType="Self.UserType" />
+          <EntitySet Name="Vacations" EntityType="Self.Vacation" />
+          <AssociationSet Name="FK_BillDocument_Supllier" Association="Self.FK_BillDocument_Supllier">
+            <End Role="Supplier" EntitySet="Suppliers" />
+            <End Role="BillDocument" EntitySet="BillDocuments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BillDocument_user" Association="Self.FK_BillDocument_user">
+            <End Role="User" EntitySet="Users" />
+            <End Role="BillDocument" EntitySet="BillDocuments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Branch_User" Association="Self.FK_Branch_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Branch" EntitySet="Branches" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Branch" Association="Self.FK_Employee_Branch">
+            <End Role="Branch" EntitySet="Branches" />
+            <End Role="Employee" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store_Branch" Association="Self.FK_Store_Branch">
+            <End Role="Branch" EntitySet="Branches" />
+            <End Role="Store" EntitySet="Stores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DisposalDocument_Customer" Association="Self.FK_DisposalDocument_Customer">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="DisposalDocument" EntitySet="DisposalDocuments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FixInvoice_Customer" Association="Self.FK_FixInvoice_Customer">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="FixInvoice" EntitySet="FixInvoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Customer" Association="Self.FK_User_Customer">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Customer" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Department_User" Association="Self.FK_Department_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Department" EntitySet="Departments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Department" Association="Self.FK_Employee_Department">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="Employee" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Job_Department" Association="Self.FK_Job_Department">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="Job" EntitySet="Jobs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RequestCycle_Department" Association="Self.FK_RequestCycle_Department">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="RequestCycle" EntitySet="RequestCycles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DisposalDocument_User" Association="Self.FK_DisposalDocument_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="DisposalDocument" EntitySet="DisposalDocuments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Job" Association="Self.FK_Employee_Job">
+            <End Role="Job" EntitySet="Jobs" />
+            <End Role="Employee" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_User" Association="Self.FK_Employee_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Employee" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EndSalary_Employee" Association="Self.FK_EndSalary_Employee">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="EndSalary" EntitySet="EndSalaries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Salary_Employee" Association="Self.FK_Salary_Employee">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Salary" EntitySet="Salaries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalaryTransaction_Employee" Association="Self.FK_SalaryTransaction_Employee">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="SalaryTransaction" EntitySet="SalaryTransactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EndSalary_User" Association="Self.FK_EndSalary_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="EndSalary" EntitySet="EndSalaries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExpensesLimit_User" Association="Self.FK_ExpensesLimit_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="ExpensesLimit" EntitySet="ExpensesLimits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FixInvoice_User" Association="Self.FK_FixInvoice_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="FixInvoice" EntitySet="FixInvoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Job_User" Association="Self.FK_Job_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Job" EntitySet="Jobs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_ProductType" Association="Self.FK_Product_ProductType">
+            <End Role="ProductType" EntitySet="ProductTypes" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_User" Association="Self.FK_Product_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductStore_Product" Association="Self.FK_ProductStore_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="ProductStore" EntitySet="ProductStores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PurchaseInvoiceDetails_Product" Association="Self.FK_PurchaseInvoiceDetails_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="PurchaseInvoiceDetails" EntitySet="PurchaseInvoiceDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesInvoiceDetail_Product" Association="Self.FK_SalesInvoiceDetail_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="SalesInvoiceDetail" EntitySet="SalesInvoiceDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductStore_Store" Association="Self.FK_ProductStore_Store">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="ProductStore" EntitySet="ProductStores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductStore_User" Association="Self.FK_ProductStore_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="ProductStore" EntitySet="ProductStores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductType_User" Association="Self.FK_ProductType_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="ProductType" EntitySet="ProductTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PurchaseInvoice_User" Association="Self.FK_PurchaseInvoice_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="PurchaseInvoice" EntitySet="PurchaseInvoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PurchaseInvoiceDetails_PurchaseInvoice" Association="Self.FK_PurchaseInvoiceDetails_PurchaseInvoice">
+            <End Role="PurchaseInvoice" EntitySet="PurchaseInvoices" />
+            <End Role="PurchaseInvoiceDetails" EntitySet="PurchaseInvoiceDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PurchaseInvoiceDetails_User" Association="Self.FK_PurchaseInvoiceDetails_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="PurchaseInvoiceDetails" EntitySet="PurchaseInvoiceDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RequestCycle_Invoice" Association="Self.FK_RequestCycle_Invoice">
+            <End Role="SalesInvoice" EntitySet="SalesInvoices" />
+            <End Role="RequestCycle" EntitySet="RequestCycles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RequestCycle_User" Association="Self.FK_RequestCycle_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="RequestCycle" EntitySet="RequestCycles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SafeHouse_User" Association="Self.FK_SafeHouse_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="SafeHouse" EntitySet="SafeHouses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Salary_User" Association="Self.FK_Salary_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Salary" EntitySet="Salaries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalaryTransaction_User" Association="Self.FK_SalaryTransaction_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="SalaryTransaction" EntitySet="SalaryTransactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesInvoice_User" Association="Self.FK_SalesInvoice_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="SalesInvoice" EntitySet="SalesInvoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesInvoiceDetail_SalesInvoice" Association="Self.FK_SalesInvoiceDetail_SalesInvoice">
+            <End Role="SalesInvoice" EntitySet="SalesInvoices" />
+            <End Role="SalesInvoiceDetail" EntitySet="SalesInvoiceDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesInvoiceDetail_TypeInvoice" Association="Self.FK_SalesInvoiceDetail_TypeInvoice">
+            <End Role="TypeInvoice" EntitySet="TypeInvoices" />
+            <End Role="SalesInvoiceDetail" EntitySet="SalesInvoiceDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesInvoiceDetail_User" Association="Self.FK_SalesInvoiceDetail_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="SalesInvoiceDetail" EntitySet="SalesInvoiceDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store_User" Association="Self.FK_Store_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Store" EntitySet="Stores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Supplier_User" Association="Self.FK_Supplier_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Supplier" EntitySet="Suppliers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_User" Association="Self.FK_User_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="User1" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_UserTypes" Association="Self.FK_User_UserTypes">
+            <End Role="UserTypes" EntitySet="UserTypes" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_A65D4E_SolarEnergyModelStoreContainer" CdmEntityContainer="DB_A65D4E_SolarEnergyEntities">
+          <EntitySetMapping Name="BillDocuments">
+            <EntityTypeMapping TypeName="DB_A65D4E_SolarEnergyModel.BillDocument">
+              <MappingFragment StoreEntitySet="BillDocument">
+                <ScalarProperty Name="BillDocumentId" ColumnName="BillDocumentId" />
+                <ScalarProperty Name="Supplier_id" ColumnName="Supplier_id" />
+                <ScalarProperty Name="ReasonCatch" ColumnName="ReasonCatch" />
+                <ScalarProperty Name="CatchAmount" ColumnName="CatchAmount" />
+                <ScalarProperty Name="Last_Modified_Date" ColumnName="Last_Modified_Date" />
+                <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Last_Modified_User" ColumnName="Last_Modified_User" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Branches">
+            <EntityTypeMapping TypeName="DB_A65D4E_SolarEnergyModel.Branch">
+              <MappingFragment StoreEntitySet="Branch">
+                <ScalarProperty Name="BranchId" ColumnName="BranchId" />
+                <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+                <ScalarProperty Name="Last_Modified_Date" ColumnName="Last_Modified_Date" />
+                <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Last_Modified_User" ColumnName="Last_Modified_User" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="DB_A65D4E_SolarEnergyModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="National_Id" ColumnName="National_Id" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+                <ScalarProperty Name="Last_Modified_Date" ColumnName="Last_Modified_Date" />
+                <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="last_Modified_user" ColumnName="last_Modified_user" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departments">
+            <EntityTypeMapping TypeName="DB_A65D4E_SolarEnergyModel.Department">
+              <MappingFragment StoreEntitySet="Department">
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+                <ScalarProperty Name="Last_Modified_Date" ColumnName="Last_Modified_Date" />
+                <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Last_Modified_User" ColumnName="Last_Modified_User" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Discounts">
+            <EntityTypeMapping TypeName="DB_A65D4E_SolarEnergyModel.Discount">
+              <MappingFragment StoreEntitySet="Discount">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DiscountCode" ColumnName="DiscountCode" />
+                <ScalarProperty Name="DiscountName" ColumnName="DiscountName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DisposalDocuments">
+            <EntityTypeMapping TypeName="DB_A65D4E_SolarEnergyModel.DisposalDocument">
+              <MappingFragment StoreEntitySet="DisposalDocument">
+                <ScalarProperty Name="DisposalDocumentId" ColumnName="DisposalDocumentId" />
+                <ScalarProperty Name="Customer_Id" ColumnName="Customer_Id" />
+                <ScalarProperty Name="ReasonCatch" ColumnName="ReasonCatch" />
+                <ScalarProperty Name="CatchAmount" ColumnName="CatchAmount" />
+                <ScalarProperty Name="SataeDone" ColumnName="SataeDone" />
+                <ScalarProperty Name="Last_Modified_Date" ColumnName="Last_Modified_Date" />
+                <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="Last_Modified_User" ColumnName="Last_Modified_User" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="DB_A65D4E_SolarEnergyModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+                <ScalarProperty Name="LandLine" ColumnName="LandLine" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="National_Id" ColumnName="National_Id" />
+                <ScalarProperty Name="EmployeeAddress1" ColumnName="EmployeeAddress1" />
+                <ScalarProperty Name="EmployeeAddress2" ColumnName="EmployeeAddress2" />
+                <ScalarProperty Name="Birthdate" ColumnName="Birthdate" />
+                <ScalarProperty Name="HiringDate" ColumnName="HiringDate" />
+                <ScalarProperty Name="Natinality" ColumnName="Natinality" />
+                <ScalarProperty Name="Job_Id" ColumnName="Job_Id" />
+                <ScalarProperty Name="Department_Id" ColumnName="Department_Id" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Last_Modified_Date" ColumnName="Last_Modified_Date" />
+                <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Last_Modified_User" ColumnName="Last_Modified_User" />
+                <ScalarProperty Name="Branch_Id" ColumnName="Branch_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EndSalaries">
+            <EntityTypeMapping TypeName="DB_A65D4E_SolarEnergyModel.EndSalary">
+              <MappingFragment StoreEntitySet="EndSalary">
+                <ScalarProperty Name="EndSalaryId" ColumnName="EndSalaryId" />
+                <ScalarProperty Name="Id_Employee" ColumnName="Id_Employee" />
+                <ScalarProperty Name="PaidHolidays" ColumnName="PaidHolidays" />
+                <ScalarProperty Name="Bonus" ColumnName="Bonus" />
+                <ScalarProperty Name="Cut" ColumnName="Cut" />
+                <ScalarProperty Name="DateFrom" ColumnName="DateFrom" />
+                <ScalarProperty Name="DateTo" ColumnName="DateTo" />
+                <ScalarProperty Name="Last_Modified_User" ColumnName="Last_Modified_User" />
+                <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+                <ScalarProperty Name="Last_Modified_Date" ColumnName="Last_Modified_Date" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Expenses">
+            <EntityTypeMapping TypeName="DB_A65D4E_SolarEnergyModel.Expens">
+              <MappingFragment StoreEntitySet="Expenses">
+                <ScalarProperty Name="ExpensesId" ColumnName="ExpensesId" />
+                <ScalarProperty Name="ExpensesInfo" ColumnName="ExpensesInfo" />
+                <ScalarProperty Name="ExpensesAmount" ColumnName="ExpensesAmount" />
+                <ScalarProperty Name="Last_Modified_Date" ColumnName="Last_Modified_Date" />
+                <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Last_Modified_User" ColumnName="Last_Modified_User" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExpensesLimits">
+            <EntityTypeMapping TypeName="DB_A65D4E_SolarEnergyModel.ExpensesLimit">
+              <MappingFragment StoreEntitySet="ExpensesLimit">
+                <ScalarProperty Name="ExpensesLimitId" ColumnName="ExpensesLimitId" />
+                <ScalarProperty Name="ExpensesLimit1" ColumnName="ExpensesLimit" />
+                <ScalarProperty Name="Last_Modified_date" ColumnName="Last_Modified_date" />
+                <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Last_Modified_User" ColumnName="Last_Modified_User" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FixInvoices">
+            <EntityTypeMapping TypeName="DB_A65D4E_SolarEnergyModel.FixInvoice">
+              <MappingFragment StoreEntitySet="FixInvoice">
+                <ScalarProperty Name="FixInvoice1" ColumnName="FixInvoice" />
+                <ScalarProperty Name="SalesInvoice_Id" ColumnName="SalesInvoice_Id" />
+                <ScalarProperty Name="Customer_Id" ColumnName="Customer_Id" />
+                <ScalarProperty Name="VisitReason" ColumnName="VisitReason" />
+                <ScalarProperty Name="VisitAmount" ColumnName="VisitAmount" />
+                <ScalarProperty Name="Last_Modified_Date" ColumnName="Last_Modified_Date" />
+                <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Last_Modified_User" ColumnName="Last_Modified_User" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Incentives">
+            <EntityTypeMapping TypeName="DB_A65D4E_SolarEnergyModel.Incentive">
+              <MappingFragment StoreEntitySet="Incentive">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IncentiveCode" ColumnName="IncentiveCode" />
+                <ScalarProperty Name="IncentiveName" ColumnName="IncentiveName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Jobs">
+            <EntityTypeMapping TypeName="DB_A65D4E_SolarEnergyModel.Job">
+              <MappingFragment StoreEntitySet="Job">
+                <ScalarProperty Name="JobId" ColumnName="JobId" />
+                <ScalarProperty Name="JobName" ColumnName="JobName" />
+                <ScalarProperty Name="Department_Id" ColumnName="Department_Id" />
+                <ScalarProperty Name="Last_Modified_Date" ColumnName="Last_Modified_Date" />
+                <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Last_Modified_User" ColumnName="Last_Modified_User" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="DB_A65D4E_SolarEnergyModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductType_Id" ColumnName="ProductType_Id" />
+                <ScalarProperty Name="Last_Modified_Date" ColumnName="Last_Modified_Date" />
+                <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Last_Modified_User" ColumnName="Last_Modified_User" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductStores">
+            <EntityTypeMapping TypeName="DB_A65D4E_SolarEnergyModel.ProductStore">
+              <MappingFragment StoreEntitySet="ProductStore">
+                <ScalarProperty Name="ProdutStoreId" ColumnName="ProdutStoreId" />
+                <ScalarProperty Name="Product_Id" ColumnName="Product_Id" />
+                <ScalarProperty Name="Store_Id" ColumnName="Store_Id" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="PriceCommercial" ColumnName="PriceCommercial" />
+                <ScalarProperty Name="PriceEnd" ColumnName="PriceEnd" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Last_Modified_Date" ColumnName="Last_Modified_Date" />
+                <ScalarProperty Name="Create_date" ColumnName="Create_date" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Last_Modified_User" ColumnName="Last_Modified_User" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductTypes">
+            <EntityTypeMapping TypeName="DB_A65D4E_SolarEnergyModel.ProductType">
+              <MappingFragment StoreEntitySet="ProductType">
+                <ScalarProperty Name="ProductTypeId" ColumnName="ProductTypeId" />
+                <ScalarProperty Name="ProductTypeName" ColumnName="ProductTypeName" />
+                <ScalarProperty Name="Last_Modified_Date" ColumnName="Last_Modified_Date" />
+                <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="LastModified_User" ColumnName="LastModified_User" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PurchaseInvoices">
+            <EntityTypeMapping TypeName="DB_A65D4E_SolarEnergyModel.PurchaseInvoice">
+              <MappingFragment StoreEntitySet="PurchaseInvoice">
+                <ScalarProperty Name="PurchaseInvoiceId" ColumnName="PurchaseInvoiceId" />
+                <ScalarProperty Name="TotalOres" ColumnName="TotalOres" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="TotalNet" ColumnName="TotalNet" />
+                <ScalarProperty Name="TotalRemain" ColumnName="TotalRemain" />
+                <ScalarProperty Name="Last_Modified_Date" ColumnName="Last_Modified_Date" />
+                <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Last_Modified_User" ColumnName="Last_Modified_User" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PurchaseInvoiceDetails">
+            <EntityTypeMapping TypeName="DB_A65D4E_SolarEnergyModel.PurchaseInvoiceDetail">
+              <MappingFragment StoreEntitySet="PurchaseInvoiceDetails">
+                <ScalarProperty Name="PurchaseInvoiceDetailsId" ColumnName="PurchaseInvoiceDetailsId" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="TotalOres" ColumnName="TotalOres" />
+                <ScalarProperty Name="PurchaseInvoice_Id" ColumnName="PurchaseInvoice_Id" />
+                <ScalarProperty Name="Product_Id" ColumnName="Product_Id" />
+                <ScalarProperty Name="Last_Modified_Date" ColumnName="Last_Modified_Date" />
+                <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Last_Modified_User" ColumnName="Last_Modified_User" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RequestCycles">
+            <EntityTypeMapping TypeName="DB_A65D4E_SolarEnergyModel.RequestCycle">
+              <MappingFragment StoreEntitySet="RequestCycle">
+                <ScalarProperty Name="RequestCycleId" ColumnName="RequestCycleId" />
+                <ScalarProperty Name="Department_Id" ColumnName="Department_Id" />
+                <ScalarProperty Name="Invoice_Id" ColumnName="Invoice_Id" />
+                <ScalarProperty Name="Last_Modified_date" ColumnName="Last_Modified_date" />
+                <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Last_Modified_User" ColumnName="Last_Modified_User" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SafeHouses">
+            <EntityTypeMapping TypeName="DB_A65D4E_SolarEnergyModel.SafeHouse">
+              <MappingFragment StoreEntitySet="SafeHouse">
+                <ScalarProperty Name="SafehouseId" ColumnName="SafehouseId" />
+                <ScalarProperty Name="Last_Modified_Date" ColumnName="Last_Modified_Date" />
+                <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Last_Modified_User" ColumnName="Last_Modified_User" />
+                <ScalarProperty Name="FirstPeriodCredit" ColumnName="FirstPeriodCredit" />
+                <ScalarProperty Name="SalesInvoiceNetTotal" ColumnName="SalesInvoiceNetTotal" />
+                <ScalarProperty Name="PurchaseInvoiceNetTotal" ColumnName="PurchaseInvoiceNetTotal" />
+                <ScalarProperty Name="CmpanyExpenses" ColumnName="CmpanyExpenses" />
+                <ScalarProperty Name="DisposalDocumentAmount" ColumnName="DisposalDocumentAmount" />
+                <ScalarProperty Name="BillDocumentAmount" ColumnName="BillDocumentAmount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Salaries">
+            <EntityTypeMapping TypeName="DB_A65D4E_SolarEnergyModel.Salary">
+              <MappingFragment StoreEntitySet="Salary">
+                <ScalarProperty Name="SalaryId" ColumnName="SalaryId" />
+                <ScalarProperty Name="Salary1" ColumnName="Salary" />
+                <ScalarProperty Name="Id_Employee" ColumnName="Id_Employee" />
+                <ScalarProperty Name="NumHoliday" ColumnName="NumHoliday" />
+                <ScalarProperty Name="Last_Modified_Date" ColumnName="Last_Modified_Date" />
+                <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Last_Modified_User" ColumnName="Last_Modified_User" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SalaryTransactions">
+            <EntityTypeMapping TypeName="DB_A65D4E_SolarEnergyModel.SalaryTransaction">
+              <MappingFragment StoreEntitySet="SalaryTransaction">
+                <ScalarProperty Name="SalaryTransactionId" ColumnName="SalaryTransactionId" />
+                <ScalarProperty Name="SalaryTransaction1" ColumnName="SalaryTransaction" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="IssuedDate" ColumnName="IssuedDate" />
+                <ScalarProperty Name="Id_Employee" ColumnName="Id_Employee" />
+                <ScalarProperty Name="Last_Modified_Date" ColumnName="Last_Modified_Date" />
+                <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Last_Modified_User" ColumnName="Last_Modified_User" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SalesInvoices">
+            <EntityTypeMapping TypeName="DB_A65D4E_SolarEnergyModel.SalesInvoice">
+              <MappingFragment StoreEntitySet="SalesInvoice">
+                <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
+                <ScalarProperty Name="TotalProduct" ColumnName="TotalProduct" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="TotalNet" ColumnName="TotalNet" />
+                <ScalarProperty Name="TotalRemain" ColumnName="TotalRemain" />
+                <ScalarProperty Name="Last_Modified_Date" ColumnName="Last_Modified_Date" />
+                <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Last_Modified_User" ColumnName="Last_Modified_User" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SalesInvoiceDetails">
+            <EntityTypeMapping TypeName="DB_A65D4E_SolarEnergyModel.SalesInvoiceDetail">
+              <MappingFragment StoreEntitySet="SalesInvoiceDetail">
+                <ScalarProperty Name="InvoiceDetailsId" ColumnName="InvoiceDetailsId" />
+                <ScalarProperty Name="TypeInvoice_Id" ColumnName="TypeInvoice_Id" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="TotalProduct" ColumnName="TotalProduct" />
+                <ScalarProperty Name="SalesInvoice_Id" ColumnName="SalesInvoice_Id" />
+                <ScalarProperty Name="Product_Id" ColumnName="Product_Id" />
+                <ScalarProperty Name="Last_Modified_Date" ColumnName="Last_Modified_Date" />
+                <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Last_Modified_User" ColumnName="Last_Modified_User" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stores">
+            <EntityTypeMapping TypeName="DB_A65D4E_SolarEnergyModel.Store">
+              <MappingFragment StoreEntitySet="Store">
+                <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+                <ScalarProperty Name="StoreName" ColumnName="StoreName" />
+                <ScalarProperty Name="Branch_id" ColumnName="Branch_id" />
+                <ScalarProperty Name="Last_Modified_Date" ColumnName="Last_Modified_Date" />
+                <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="Last_Modifiied_User" ColumnName="Last_Modifiied_User" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Suppliers">
+            <EntityTypeMapping TypeName="DB_A65D4E_SolarEnergyModel.Supplier">
+              <MappingFragment StoreEntitySet="Supplier">
+                <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="NationalId" ColumnName="NationalId" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="SupplierAddress" ColumnName="SupplierAddress" />
+                <ScalarProperty Name="Last_Modified_Date" ColumnName="Last_Modified_Date" />
+                <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Last_Modified_User" ColumnName="Last_Modified_User" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeInvoices">
+            <EntityTypeMapping TypeName="DB_A65D4E_SolarEnergyModel.TypeInvoice">
+              <MappingFragment StoreEntitySet="TypeInvoice">
+                <ScalarProperty Name="TypeInvoieId" ColumnName="TypeInvoieId" />
+                <ScalarProperty Name="TypeInvoiceName" ColumnName="TypeInvoiceName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="DB_A65D4E_SolarEnergyModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="PassKey" ColumnName="PassKey" />
+                <ScalarProperty Name="UserType_Id" ColumnName="UserType_Id" />
+                <ScalarProperty Name="Employee_Id" ColumnName="Employee_Id" />
+                <ScalarProperty Name="Last_Modified_date" ColumnName="Last_Modified_date" />
+                <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Last_Modified_User" ColumnName="Last_Modified_User" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserTypes">
+            <EntityTypeMapping TypeName="DB_A65D4E_SolarEnergyModel.UserType">
+              <MappingFragment StoreEntitySet="UserTypes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Typename" ColumnName="Typename" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vacations">
+            <EntityTypeMapping TypeName="DB_A65D4E_SolarEnergyModel.Vacation">
+              <MappingFragment StoreEntitySet="Vacation">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="VacationCode" ColumnName="VacationCode" />
+                <ScalarProperty Name="VacationName" ColumnName="VacationName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
