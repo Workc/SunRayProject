@@ -21,9 +21,8 @@ namespace SunRays._101_Adds._103_Authentication
 
     public partial class FrmLogin : Form 
     {
-   //  readonly PointOfSaleEntities Context = new PointOfSaleEntities();
-        public string CPU_Code { get; set; }
-      readonly Static st = new Static();
+        readonly DB_A65D4E_SolarEnergyEntities context = new DB_A65D4E_SolarEnergyEntities();
+        readonly Static st = new Static();
         public FrmLogin()
         {
             InitializeComponent();
@@ -58,42 +57,7 @@ namespace SunRays._101_Adds._103_Authentication
 
         private void btnLogin_Click_1(object sender, EventArgs e)
         {
-            //bool CheckUser;
-            //try
-            //{
-            //    CheckUser = Context.User_View.Any(Users => Users.UserName == txtUserName.Text && Users.UserFlag == true && Users.Password == txtPassword.Text);
-            //    if (CheckUser)
-            //    {
-
-            //        User _User;
-            //        _User = Context.Users.SingleOrDefault(user => user.Password == txtPassword.Text && user.UserName == txtUserName.Text && user.IsDeleted == 0);
-            //        this.Hide();
-            //        st.UserName(_User.Emp_Code);
-            //        //Int64 Project_Code = Convert.ToInt64(SlkProjectCity.EditValue);
-            //        // st.Set_Project_Code(Project_Code);
-            //        this.Hide();
-            //        // SplashScreenManager.ShowForm(typeof(SplashScreen1));
-            //        //Timer d = new Timer();
-            //        //d.Start();
-                FrmMain frm = new FrmMain();
-                 frm.ShowDialog();
-
-
-
-            //    }
-            //    else
-            //    {
-            //        MaterialMessageBox.Show("!ليس لديك حساب", MessageBoxButtons.OK);
-            //        return;
-
-
-            //    }
-            //}
-            //catch(Exception ex)
-            //{
-
-            //    var x = ex;
-            //}
+             
         }
 
         private void txtUserName_KeyDown(object sender, KeyEventArgs e)

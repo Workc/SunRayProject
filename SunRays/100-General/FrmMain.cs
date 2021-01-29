@@ -27,7 +27,7 @@ namespace SunRays._100_General
 {
     public partial class FrmMain : MaterialSkin.Controls.MaterialForm
     {
-        //readonly PointOfSaleEntities db = new PointOfSaleEntities();
+        readonly DB_A65D4E_SolarEnergyEntities context = new DB_A65D4E_SolarEnergyEntities();
         readonly Static st = new Static();
         public FrmMain()
         {
@@ -36,47 +36,14 @@ namespace SunRays._100_General
             s.BackColor = Color.Red;
         }
 
-        //private void BtRefersh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        //{
-        //    RbAddCustomer.Visible = false;
-        //    RbAddUser.Visible = false;
-        //    RbAuth.Visible = false;
-        //}
+        private void BtRefersh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+      
+        }
 
         void Authentication()
         {
-            //Int64 User_Code = st.User_Code();
-            //List<User_View> User;
-            //User = db.User_View.Where(View => View.Employee_Code == User_Code && (View.UserFlag == true)).ToList();
-            //foreach (var item in User)
-            //{
-            //    BarStaticItem3.Caption = item.Employee_Name;
-            //    barStaticItem10.Caption = item.Employee_Name;
-            //    BarStaticItem3.Appearance.ForeColor = Color.Red;
-            //    barStaticItem10.Appearance.ForeColor = Color.Red;
-            //}
-
-            //var result = db.Auth_View.Where(View => View.User_Code == User_Code && (View.User_IsDeleted == 0)).ToList();
-            //for (var i = 0; i < result.Count; i++)
-            //{
-            //    string _TabName = result[i].Tab_Name;
-            //    switch (_TabName)
-            //    {
-            //        case "RbAuth":
-            //            RbAuth.Visible = true;
-            //            break;
-            //        case "RbAddUser":
-            //            RbAddUser.Visible = true;
-            //            break;
-            //        default:
-            //            break;
-            //    }
-            //}
-
-            //if (RbAddCustomer.Visible == false && RbAddUser.Visible == false && RbAuth.Visible == false)
-            //{
-            //    TbAdd.Visible = false;
-            //}
+             
         }
 
         private void FrmMain_Load(object sender, EventArgs e)
@@ -87,33 +54,28 @@ namespace SunRays._100_General
         private void BtnExit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Hide();
-            //    FrmLogin frm = new FrmLogin();
-            //    frm.ShowDialog();
+           
         }
 
        
 
-        //private void BarAddUser_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        //{
-        //    frmUser frm = new frmUser();
-        //    frm.ShowDialog();
-        //}
-        //private void BrAddauthentication_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        //{
-        //    FrmAuthentication frm = new FrmAuthentication();
-        //    frm.ShowDialog();
-        //}
+        private void BarAddUser_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+        
+        }
+        private void BrAddauthentication_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+      
+        }
 
-        //private void barButtonItem21_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        //{
-        //    frmEmployees frm = new frmEmployees();
-        //    frm.ShowDialog();
-        //}
+        private void barButtonItem21_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+       
+        }
 
-        //private void BrAddCustomer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        //{
-        //    frmCustomer frm = new frmCustomer();
-        //    frm.ShowDialog();
-        //}
+        private void BrAddCustomer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+        
+        }
     }
 }

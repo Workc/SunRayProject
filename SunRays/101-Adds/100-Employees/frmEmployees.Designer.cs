@@ -162,7 +162,7 @@ namespace SunRays._101_Adds._100_Employees
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1376, 669);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1376, 675);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // gcEmployeeCard
@@ -172,7 +172,7 @@ namespace SunRays._101_Adds._100_Employees
             this.gcEmployeeCard.Location = new System.Drawing.Point(3, 3);
             this.gcEmployeeCard.MainView = this.gvEmployeeCard;
             this.gcEmployeeCard.Name = "gcEmployeeCard";
-            this.gcEmployeeCard.Size = new System.Drawing.Size(1370, 663);
+            this.gcEmployeeCard.Size = new System.Drawing.Size(1370, 669);
             this.gcEmployeeCard.TabIndex = 8;
             this.gcEmployeeCard.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvEmployeeCard});
@@ -372,7 +372,7 @@ namespace SunRays._101_Adds._100_Employees
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.windowsUIButtonPanel, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 669);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 675);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -384,7 +384,7 @@ namespace SunRays._101_Adds._100_Employees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1376, 734);
+            this.ClientSize = new System.Drawing.Size(1376, 740);
             this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tableLayoutPanel2);
