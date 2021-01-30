@@ -36,8 +36,10 @@ namespace SunRays
         public virtual DbSet<Expens> Expenses { get; set; }
         public virtual DbSet<ExpensesLimit> ExpensesLimits { get; set; }
         public virtual DbSet<FixInvoice> FixInvoices { get; set; }
+        public virtual DbSet<Gender> Genders { get; set; }
         public virtual DbSet<Incentive> Incentives { get; set; }
         public virtual DbSet<Job> Jobs { get; set; }
+        public virtual DbSet<Nationality> Nationalities { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductStore> ProductStores { get; set; }
         public virtual DbSet<ProductType> ProductTypes { get; set; }
@@ -55,5 +57,6 @@ namespace SunRays
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UserType> UserTypes { get; set; }
         public virtual DbSet<Vacation> Vacations { get; set; }
+        public virtual DbSet<Employee_View> Employee_View { get; set; }
     }
 }

@@ -64,7 +64,7 @@ namespace SunRays._101_Adds._102_Customer
             this.gcEmployeeCard.Location = new System.Drawing.Point(0, 0);
             this.gcEmployeeCard.MainView = this.gvEmployeeCard;
             this.gcEmployeeCard.Name = "gcEmployeeCard";
-            this.gcEmployeeCard.Size = new System.Drawing.Size(1151, 455);
+            this.gcEmployeeCard.Size = new System.Drawing.Size(1165, 469);
             this.gcEmployeeCard.TabIndex = 9;
             this.gcEmployeeCard.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvEmployeeCard});
@@ -269,12 +269,12 @@ namespace SunRays._101_Adds._102_Customer
             this.windowsUIButtonPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.windowsUIButtonPanel.EnableImageTransparency = true;
             this.windowsUIButtonPanel.ForeColor = System.Drawing.Color.White;
-            this.windowsUIButtonPanel.Location = new System.Drawing.Point(0, 395);
+            this.windowsUIButtonPanel.Location = new System.Drawing.Point(0, 409);
             this.windowsUIButtonPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.windowsUIButtonPanel.MaximumSize = new System.Drawing.Size(0, 60);
             this.windowsUIButtonPanel.MinimumSize = new System.Drawing.Size(60, 60);
             this.windowsUIButtonPanel.Name = "windowsUIButtonPanel";
-            this.windowsUIButtonPanel.Size = new System.Drawing.Size(1151, 60);
+            this.windowsUIButtonPanel.Size = new System.Drawing.Size(1165, 60);
             this.windowsUIButtonPanel.TabIndex = 10;
             this.windowsUIButtonPanel.Text = "windowsUIButtonPanel";
             this.windowsUIButtonPanel.UseButtonBackgroundImages = false;
@@ -284,7 +284,7 @@ namespace SunRays._101_Adds._102_Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1151, 455);
+            this.ClientSize = new System.Drawing.Size(1165, 469);
             this.ControlBox = false;
             this.Controls.Add(this.windowsUIButtonPanel);
             this.Controls.Add(this.gcEmployeeCard);

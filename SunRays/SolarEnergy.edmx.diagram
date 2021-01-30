@@ -5,82 +5,76 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="2cb8733f34b845f5a1ff7242e5a72ec2" Name="Diagram1">
-        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.BillDocument" Width="1.5" PointX="7.5" PointY="46.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.Branch" Width="1.5" PointX="5.25" PointY="23.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.Customer" Width="1.5" PointX="5.25" PointY="27.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.Department" Width="1.5" PointX="5.25" PointY="32" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.Discount" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.DisposalDocument" Width="1.5" PointX="10.5" PointY="34.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.Employee" Width="1.5" PointX="7.5" PointY="29.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.EndSalary" Width="1.5" PointX="12.75" PointY="31.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.Expens" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.ExpensesLimit" Width="1.5" PointX="5.25" PointY="35.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.FixInvoice" Width="1.5" PointX="7.5" PointY="36.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.Incentive" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.Job" Width="1.5" PointX="10.5" PointY="39" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.Product" Width="1.5" PointX="10.5" PointY="43.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.ProductStore" Width="1.5" PointX="12.75" PointY="36.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.ProductType" Width="1.5" PointX="5.25" PointY="42.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.PurchaseInvoice" Width="1.5" PointX="5.25" PointY="46.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.PurchaseInvoiceDetail" Width="1.5" PointX="12.75" PointY="41.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.RequestCycle" Width="1.5" PointX="7.5" PointY="42.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.SafeHouse" Width="1.5" PointX="5.25" PointY="50.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.Salary" Width="1.5" PointX="12.75" PointY="27.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.SalaryTransaction" Width="1.5" PointX="15.75" PointY="33.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.SalesInvoice" Width="1.5" PointX="5.25" PointY="54.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.SalesInvoiceDetail" Width="1.5" PointX="12.75" PointY="46.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.Store" Width="1.5" PointX="10.5" PointY="29.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.Supplier" Width="1.5" PointX="5.25" PointY="58.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.TypeInvoice" Width="1.5" PointX="10.5" PointY="48.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.User" Width="1.5" PointX="3" PointY="33.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.UserType" Width="1.5" PointX="0.75" PointY="36.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.Vacation" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_BillDocument_Supllier" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_BillDocument_user" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_Branch_User" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_Employee_Branch" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_Store_Branch" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_DisposalDocument_Customer" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_FixInvoice_Customer" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_User_Customer" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_Department_User" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_Employee_Department" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_Job_Department" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_RequestCycle_Department" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_DisposalDocument_User" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_Employee_Job" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_Employee_User" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_EndSalary_Employee" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_Salary_Employee" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_SalaryTransaction_Employee" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_EndSalary_User" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_ExpensesLimit_User" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_FixInvoice_User" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_Job_User" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_Product_ProductType" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_Product_User" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_ProductStore_Product" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_PurchaseInvoiceDetails_Product" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_SalesInvoiceDetail_Product" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_ProductStore_Store" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_ProductStore_User" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_ProductType_User" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_PurchaseInvoice_User" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_PurchaseInvoiceDetails_PurchaseInvoice" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_PurchaseInvoiceDetails_User" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_RequestCycle_Invoice" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_RequestCycle_User" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_SafeHouse_User" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_Salary_User" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_SalaryTransaction_User" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_SalesInvoice_User" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_SalesInvoiceDetail_SalesInvoice" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_SalesInvoiceDetail_TypeInvoice" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_SalesInvoiceDetail_User" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_Store_User" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_Supplier_User" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_User_User" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_User_UserTypes" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.BillDocument" Width="1.5" PointX="7.5" PointY="50.75" />
+        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.Branch" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.Customer" Width="1.5" PointX="5.25" PointY="22.875" />
+        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.Department" Width="1.5" PointX="5.25" PointY="35.875" />
+        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.Discount" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.DisposalDocument" Width="1.5" PointX="7.5" PointY="31.125" />
+        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.Employee" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.EndSalary" Width="1.5" PointX="5.25" PointY="54" />
+        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.Expens" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.ExpensesLimit" Width="1.5" PointX="5.25" PointY="47.25" />
+        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.FixInvoice" Width="1.5" PointX="10.5" PointY="31.125" />
+        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.Gender" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.Incentive" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.Job" Width="1.5" PointX="10.5" PointY="37.25" />
+        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.Nationality" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.Product" Width="1.5" PointX="7.5" PointY="26.375" />
+        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.ProductStore" Width="1.5" PointX="12.75" PointY="38.5" />
+        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.ProductType" Width="1.5" PointX="5.25" PointY="19.625" />
+        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.PurchaseInvoice" Width="1.5" PointX="5.25" PointY="61.625" />
+        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.PurchaseInvoiceDetail" Width="1.5" PointX="9.75" PointY="43.875" />
+        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.RequestCycle" Width="1.5" PointX="7.5" PointY="37.5" />
+        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.SafeHouse" Width="1.5" PointX="5.25" PointY="31.875" />
+        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.Salary" Width="1.5" PointX="5.25" PointY="58.125" />
+        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.SalaryTransaction" Width="1.5" PointX="5.25" PointY="15.875" />
+        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.SalesInvoice" Width="1.5" PointX="5.25" PointY="39.625" />
+        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.SalesInvoiceDetail" Width="1.5" PointX="12.75" PointY="33.75" />
+        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.Store" Width="1.5" PointX="5.25" PointY="43.75" />
+        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.Supplier" Width="1.5" PointX="5.25" PointY="65.5" />
+        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.TypeInvoice" Width="1.5" PointX="10.5" PointY="27.875" />
+        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.User" Width="1.5" PointX="3" PointY="35.125" />
+        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.UserType" Width="1.5" PointX="0.75" PointY="38" />
+        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.Vacation" Width="1.5" PointX="6.75" PointY="6.75" />
+        <EntityTypeShape EntityType="DB_A65D4E_SolarEnergyModel.Employee_View" Width="1.5" PointX="8.75" PointY="0.75" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_BillDocument_Supllier" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_BillDocument_user" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_DisposalDocument_Customer" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_FixInvoice_Customer" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_User_Customer" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_Department_User" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_Job_Department" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_RequestCycle_Department" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_DisposalDocument_User" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_EndSalary_User" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_ExpensesLimit_User" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_FixInvoice_User" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_Job_User" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_Product_ProductType" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_Product_User" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_ProductStore_Product" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_PurchaseInvoiceDetails_Product" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_SalesInvoiceDetail_Product" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_ProductStore_Store" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_ProductStore_User" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_ProductType_User" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_PurchaseInvoice_User" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_PurchaseInvoiceDetails_PurchaseInvoice" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_PurchaseInvoiceDetails_User" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_RequestCycle_Invoice" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_RequestCycle_User" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_SafeHouse_User" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_Salary_User" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_SalaryTransaction_User" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_SalesInvoice_User" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_SalesInvoiceDetail_SalesInvoice" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_SalesInvoiceDetail_TypeInvoice" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_SalesInvoiceDetail_User" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_Store_User" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_Supplier_User" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_User_User" />
+        <AssociationConnector Association="DB_A65D4E_SolarEnergyModel.FK_User_UserTypes" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

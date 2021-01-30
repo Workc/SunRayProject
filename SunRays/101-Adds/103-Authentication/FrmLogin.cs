@@ -1,7 +1,4 @@
-﻿
-
-
-using DevExpress.Utils;
+﻿using DevExpress.Utils;
 using DevExpress.XtraSplashScreen;
 using System;
 using System.Collections.Generic;
@@ -57,7 +54,9 @@ namespace SunRays._101_Adds._103_Authentication
 
         private void btnLogin_Click_1(object sender, EventArgs e)
         {
-             
+            this.Hide();
+            FrmMain frm = new FrmMain();
+            frm.ShowDialog();
         }
 
         private void txtUserName_KeyDown(object sender, KeyEventArgs e)

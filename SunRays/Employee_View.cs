@@ -12,9 +12,13 @@ namespace SunRays
     using System;
     using System.Collections.Generic;
     
-    public partial class Employee
+    public partial class Employee_View
     {
-        public long EmployeeId { get; set; }
+        public string National_Name { get; set; }
+        public string Gender_Name { get; set; }
+        public string BranchName { get; set; }
+        public string DepartmentName { get; set; }
+        public string JobName { get; set; }
         public long Employee_Code { get; set; }
         public string EmployeeName { get; set; }
         public string Phone { get; set; }
@@ -26,15 +30,6 @@ namespace SunRays
         public string EmployeeAddress2 { get; set; }
         public System.DateTime Birthdate { get; set; }
         public System.DateTime HiringDate { get; set; }
-        public int Gender_Id { get; set; }
-        public int Natinality_Code { get; set; }
-        public long Job_Code { get; set; }
-        public long Branch_Code { get; set; }
-        public long Department_Code { get; set; }
-        public System.DateTime Created_Date { get; set; }
-        public Nullable<System.DateTime> Last_Modified_Date { get; set; }
-        public Nullable<long> Last_Modified_User { get; set; }
         public int IsDeleted { get; set; }
-        public int Created_User { get; set; }
     }
 }

@@ -24,7 +24,6 @@ namespace SunRays
         public int IsDeleted { get; set; }
         public long Last_Modified_User { get; set; }
     
-        public virtual Employee Employee { get; set; }
         public virtual User User { get; set; }
     }
 }

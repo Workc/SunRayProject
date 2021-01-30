@@ -26,7 +26,6 @@ namespace SunRays
         public System.DateTime Last_Modified_Date { get; set; }
         public int IsDeleted { get; set; }
     
-        public virtual Employee Employee { get; set; }
         public virtual User User { get; set; }
     }
 }

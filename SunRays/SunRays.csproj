@@ -189,6 +189,9 @@
     <Compile Include="Employee.cs">
       <DependentUpon>SolarEnergy.tt</DependentUpon>
     </Compile>
+    <Compile Include="Employee_View.cs">
+      <DependentUpon>SolarEnergy.tt</DependentUpon>
+    </Compile>
     <Compile Include="EndSalary.cs">
       <DependentUpon>SolarEnergy.tt</DependentUpon>
     </Compile>
@@ -199,6 +202,9 @@
       <DependentUpon>SolarEnergy.tt</DependentUpon>
     </Compile>
     <Compile Include="FixInvoice.cs">
+      <DependentUpon>SolarEnergy.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Gender.cs">
       <DependentUpon>SolarEnergy.tt</DependentUpon>
     </Compile>
     <Compile Include="HelperClass\103-MaterialSkin\FrmYes.cs">
@@ -226,6 +232,9 @@
       <DependentUpon>SolarEnergy.tt</DependentUpon>
     </Compile>
     <Compile Include="Job.cs">
+      <DependentUpon>SolarEnergy.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Nationality.cs">
       <DependentUpon>SolarEnergy.tt</DependentUpon>
     </Compile>
     <Compile Include="Product.cs">

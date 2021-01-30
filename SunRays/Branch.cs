@@ -14,24 +14,12 @@ namespace SunRays
     
     public partial class Branch
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Branch()
-        {
-            this.Employees = new HashSet<Employee>();
-            this.Stores = new HashSet<Store>();
-        }
-    
         public long BranchId { get; set; }
+        public long Branch_Code { get; set; }
         public string BranchName { get; set; }
-        public System.DateTime Last_Modified_Date { get; set; }
+        public Nullable<System.DateTime> Last_Modified_Date { get; set; }
         public System.DateTime Created_Date { get; set; }
+        public Nullable<long> Last_Modified_User { get; set; }
         public int IsDeleted { get; set; }
-        public long Last_Modified_User { get; set; }
-    
-        public virtual User User { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Employee> Employees { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Store> Stores { get; set; }
     }
 }

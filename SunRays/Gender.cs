@@ -12,17 +12,9 @@ namespace SunRays
     using System;
     using System.Collections.Generic;
     
-    public partial class Salary
+    public partial class Gender
     {
-        public long SalaryId { get; set; }
-        public decimal Salary1 { get; set; }
-        public long Id_Employee { get; set; }
-        public int NumHoliday { get; set; }
-        public System.DateTime Last_Modified_Date { get; set; }
-        public System.DateTime Created_Date { get; set; }
-        public int IsDeleted { get; set; }
-        public long Last_Modified_User { get; set; }
-    
-        public virtual User User { get; set; }
+        public int Id { get; set; }
+        public string Gender_Name { get; set; }
     }
 }
