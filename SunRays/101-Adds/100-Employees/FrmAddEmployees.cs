@@ -50,20 +50,20 @@ namespace SunRays._101_Adds._100_Employees
             txtAdress1.ResetText();
             txtAdress2.ResetText();
             txtEmail.ResetText();
-            txtLandLine.ResetText();
+            LandLine.ResetText();
             txtMob1.ResetText();
             txtMob2.ResetText();
             TxtEmpName.ResetText();
             TxtEmpNataionalId.ResetText();
             txtEmpCode.ResetText();
             
-            GetLastEmployeeCode();
+            
         }
 
         void GetLastEmployeeCode()
         {
             Int64? MaxCode = 1;
-            if (_Employee_View != null)
+            if (_Employee_View != null && _Employee_View.Count>0)
             {
                 MaxCode = _Employee_View.Where(x => x.IsDeleted == 0).Max(u => (Int64?)u.Employee_Code + 1);
             }
@@ -106,10 +106,10 @@ namespace SunRays._101_Adds._100_Employees
             {
 
 
-            slkDepartment.Properties.DataSource = result;
-            slkDepartment.Properties.ValueMember = "Department_Code";
-            slkDepartment.Properties.DisplayMember = "DepartmentName";
-            slkDepartment.EditValue = result[0].Department_Code;
+            //slkDepartment.Properties.DataSource = result;
+            //slkDepartment.Properties.ValueMember = "Department_Code";
+            //slkDepartment.Properties.DisplayMember = "DepartmentName";
+            //slkDepartment.EditValue = result[0].Department_Code;
 
             }
             }
@@ -156,9 +156,9 @@ namespace SunRays._101_Adds._100_Employees
                 {
 
                     slkGender.Properties.DataSource = result;
-                    slkGender.Properties.ValueMember = "Id";
+                    slkGender.Properties.ValueMember = "Gender_Id";
                     slkGender.Properties.DisplayMember = "Gender_Name";
-                    slkGender.EditValue = result[0].Id;
+                    slkGender.EditValue = result[0].Gender_Id;
 
 
                 }
@@ -203,18 +203,21 @@ namespace SunRays._101_Adds._100_Employees
             {
 
                 MaterialMessageBox.Show("برجاء ادخال اسم الموظف", MessageBoxButtons.OK);
+                //TxtEmpName.Properties.ver
                 return;
 
             }
             else if (string.IsNullOrWhiteSpace(slkGender.Text))
             {
                 MaterialMessageBox.Show("برجاء اختيار الجنس", MessageBoxButtons.OK);
+                TxtEmpName.Focus();
                 return;
             }
             else if (string.IsNullOrWhiteSpace(dtBrithDay.Text))
             {
 
                 MaterialMessageBox.Show("برجاءاختيار ناريخ الميلاد", MessageBoxButtons.OK);
+                dtBrithDay.Focus();
                 return;
 
             }
@@ -222,6 +225,7 @@ namespace SunRays._101_Adds._100_Employees
             {
 
                 MaterialMessageBox.Show("برجاء ادخال الرقم القومي للموظف", MessageBoxButtons.OK);
+                TxtEmpNataionalId.Focus();
                 return;
 
             }
@@ -229,6 +233,7 @@ namespace SunRays._101_Adds._100_Employees
             {
 
                 MaterialMessageBox.Show("برجاءاختيار الجنسية ", MessageBoxButtons.OK);
+                slkNational.Focus();
                 return;
 
             }
@@ -236,6 +241,7 @@ namespace SunRays._101_Adds._100_Employees
             {
 
                 MaterialMessageBox.Show("برجاء اختيار الوظيفة", MessageBoxButtons.OK);
+                slkJop.Focus();
                 return;
 
             }
@@ -243,20 +249,16 @@ namespace SunRays._101_Adds._100_Employees
             {
 
                 MaterialMessageBox.Show("برجاء اختيار الفرع", MessageBoxButtons.OK);
+                slkBranch.Focus();
                 return;
 
             }
-            else if (string.IsNullOrWhiteSpace(slkDepartment.Text))
-            {
-
-                MaterialMessageBox.Show("برجاء اختيار القسم", MessageBoxButtons.OK);
-                return;
-
-            }
-            else if (string.IsNullOrWhiteSpace(slkDepartment.Text))
+            
+            else if (string.IsNullOrWhiteSpace(dtHiringDate.Text))
             {
 
                 MaterialMessageBox.Show("برجاء اختيار  تاريخ التوظيف", MessageBoxButtons.OK);
+                dtHiringDate.Focus();
                 return;
 
             }
@@ -331,11 +333,11 @@ namespace SunRays._101_Adds._100_Employees
                         Email = txtEmail.Text,
                         Birthdate = Convert.ToDateTime(dtBrithDay.EditValue),
                         HiringDate = Convert.ToDateTime(dtHiringDate.EditValue),
-                        LandLine = txtLandLine.Text,
+                        LandLine = LandLine.Text,
                         Last_Modified_Date = DateTime.Now,
                         Last_Modified_User = 1,
                         Branch_Code = Convert.ToInt64(slkBranch.EditValue),
-                        Department_Code = Convert.ToInt64(slkDepartment.EditValue),
+                        //Department_Code = Convert.ToInt64(slkDepartment.EditValue),
                         Gender_Id = Convert.ToInt32(slkGender.EditValue),
                         Job_Code = Convert.ToInt32(slkJop.EditValue),
                         Natinality_Code = Convert.ToInt32(slkNational.EditValue),
@@ -349,10 +351,13 @@ namespace SunRays._101_Adds._100_Employees
                     Rest();
                     using (DB_A65D4E_SolarEnergyEntities NewContext = new DB_A65D4E_SolarEnergyEntities())
                     {
+                        _Employee_View = null;
+                        _Employee_View = NewContext.Employee_View.Where(x => x.IsDeleted == 0).ToList();
 
-                        frm.gcEmployeeCard.DataSource = NewContext.Employee_View.Where(x => x.IsDeleted == 0).ToList();
+                        frm.gcEmployeeCard.DataSource = _Employee_View;
                         frm.gcEmployeeCard.RefreshDataSource();
                         frm.gcEmployeeCard.Enabled = true;
+                        GetLastEmployeeCode();
 
 
                     }
@@ -409,12 +414,7 @@ namespace SunRays._101_Adds._100_Employees
 
         private void FrmAddEmployees_Load(object sender, EventArgs e)
         {
-            Int64? MaxCode = 1;
-            if (_Employee_View != null)
-            {
-                MaxCode = _Employee_View.Where(x => x.IsDeleted == 0).Max(u => (Int64?)u.Employee_Code + 1);
-            }
-            txtEmpCode.Text = MaxCode.ToString();
+
         }
     }
 }

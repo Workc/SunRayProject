@@ -31,5 +31,9 @@ namespace SunRays
         public System.DateTime Birthdate { get; set; }
         public System.DateTime HiringDate { get; set; }
         public int IsDeleted { get; set; }
+        public int Gender_Id { get; set; }
+        public int Natinality_Code { get; set; }
+        public long Job_Code { get; set; }
+        public long Branch_Code { get; set; }
     }
 }

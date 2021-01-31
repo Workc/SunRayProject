@@ -52,12 +52,16 @@ namespace SunRays._100_General
         void FillLists()
         {
 
-            _branches = context.Branches.Where(x => x.IsDeleted == 0).ToList();
-            _Gender = context.Genders.ToList();
-            _Jop = context.Jobs.Where(x => x.IsDeleted == 0).ToList();
-            _Nationality = context.Nationalities.Where(x => x.IsDeleted == 0).ToList();
-            _Department = context.Departments.Where(x => x.IsDeleted == 0).ToList();
-            _Employee_View = context.Employee_View.Where(x => x.IsDeleted == 0).ToList();
+            using (DB_A65D4E_SolarEnergyEntities context2 = new DB_A65D4E_SolarEnergyEntities())
+            {
+
+            _branches = context2.Branches.Where(x => x.IsDeleted == 0).ToList();
+            _Gender = context2.Genders.ToList();
+            _Jop = context2.Jobs.Where(x => x.IsDeleted == 0).ToList();
+            _Nationality = context2.Nationalities.Where(x => x.IsDeleted == 0).ToList();
+            _Department = context2.Departments.Where(x => x.IsDeleted == 0).ToList();
+            _Employee_View = context2.Employee_View.Where(x => x.IsDeleted == 0).ToList();
+            }
              
 
 
@@ -114,51 +118,41 @@ namespace SunRays._100_General
             frm._branches = _branches;
             frm._Gender = _Gender;
             frm._Nationality = _Nationality;
+            frm._Employee_View = _Employee_View;
             try
             {
-
                     if (_Employee_View.Count > 0 && _Employee_View != null)
                     {
-
                         frm.gcEmployeeCard.DataSource = _Employee_View;
                         frm.gcEmployeeCard.RefreshDataSource();
-
                     }
                     else
                     {
-
                         frm.gcEmployeeCard.Enabled = false;
                         frm.windowsUIButtonPanel.Buttons.ForEach(x =>
                         {
-
                             if (x.Properties.Caption == "تعديل" || x.Properties.Caption == "طباعة" || x.Properties.Caption == "حذف")
                             {
-
                                 x.Properties.Enabled = false;
-
                             }
                             if (x.Properties.Caption == "جديد")
                             {
-
                                 x.Properties.Enabled = true;
-
                             }
-
                         });
-
-
-
-
                     }
-                 
-
             }
             catch
             {
 
-
             }
             frm.ShowDialog();
+            using (DB_A65D4E_SolarEnergyEntities context2 = new DB_A65D4E_SolarEnergyEntities())
+            {
+
+                
+                _Employee_View = context2.Employee_View.Where(x => x.IsDeleted == 0).ToList();
+            }
         }
     }
 }

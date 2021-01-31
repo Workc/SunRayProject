@@ -14,7 +14,7 @@ namespace SunRays
     
     public partial class Gender
     {
-        public int Id { get; set; }
+        public int Gender_Id { get; set; }
         public string Gender_Name { get; set; }
     }
 }

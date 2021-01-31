@@ -17,9 +17,9 @@ namespace SunRays
         public long BranchId { get; set; }
         public long Branch_Code { get; set; }
         public string BranchName { get; set; }
-        public Nullable<System.DateTime> Last_Modified_Date { get; set; }
+        public System.DateTime Last_Modified_Date { get; set; }
         public System.DateTime Created_Date { get; set; }
-        public Nullable<long> Last_Modified_User { get; set; }
+        public long Last_Modified_User { get; set; }
         public int IsDeleted { get; set; }
     }
 }

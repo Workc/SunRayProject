@@ -30,7 +30,6 @@ namespace SunRays
         public int Natinality_Code { get; set; }
         public long Job_Code { get; set; }
         public long Branch_Code { get; set; }
-        public long Department_Code { get; set; }
         public System.DateTime Created_Date { get; set; }
         public Nullable<System.DateTime> Last_Modified_Date { get; set; }
         public Nullable<long> Last_Modified_User { get; set; }

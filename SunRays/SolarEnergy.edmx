@@ -22,12 +22,12 @@
           <Key>
             <PropertyRef Name="BranchId" />
           </Key>
-          <Property Name="BranchId" Type="bigint" Nullable="false" />
+          <Property Name="BranchId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Branch_Code" Type="bigint" Nullable="false" />
           <Property Name="BranchName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Last_Modified_Date" Type="date" />
+          <Property Name="Last_Modified_Date" Type="date" Nullable="false" />
           <Property Name="Created_Date" Type="date" Nullable="false" />
-          <Property Name="Last_Modified_User" Type="bigint" />
+          <Property Name="Last_Modified_User" Type="bigint" Nullable="false" />
           <Property Name="IsDeleted" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Customer">
@@ -55,9 +55,9 @@
           <Property Name="DepartmentId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Department_Code" Type="bigint" Nullable="false" />
           <Property Name="DepartmentName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Last_Modified_Date" Type="date" />
+          <Property Name="Last_Modified_Date" Type="date" Nullable="false" />
           <Property Name="Created_Date" Type="date" Nullable="false" />
-          <Property Name="Last_Modified_User" Type="bigint" />
+          <Property Name="Last_Modified_User" Type="bigint" Nullable="false" />
           <Property Name="IsDeleted" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Discount">
@@ -102,7 +102,6 @@
           <Property Name="Natinality_Code" Type="int" Nullable="false" />
           <Property Name="Job_Code" Type="bigint" Nullable="false" />
           <Property Name="Branch_Code" Type="bigint" Nullable="false" />
-          <Property Name="Department_Code" Type="bigint" Nullable="false" />
           <Property Name="Created_Date" Type="datetime" Nullable="false" />
           <Property Name="Last_Modified_Date" Type="datetime" />
           <Property Name="Last_Modified_User" Type="bigint" />
@@ -164,9 +163,9 @@
         </EntityType>
         <EntityType Name="Gender">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="Gender_Id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Gender_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Gender_Name" Type="nchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="Incentive">
@@ -181,7 +180,7 @@
           <Key>
             <PropertyRef Name="JobId" />
           </Key>
-          <Property Name="JobId" Type="bigint" Nullable="false" />
+          <Property Name="JobId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Jop_Code" Type="bigint" Nullable="false" />
           <Property Name="JobName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Department_Id" Type="bigint" Nullable="false" />
@@ -427,16 +426,14 @@ warning 6002: The table/view 'DB_A65D4E_SolarEnergy.dbo.Employee_View' does not 
             <PropertyRef Name="JobName" />
             <PropertyRef Name="Employee_Code" />
             <PropertyRef Name="EmployeeName" />
-            <PropertyRef Name="Phone" />
-            <PropertyRef Name="Phone2" />
-            <PropertyRef Name="LandLine" />
-            <PropertyRef Name="Email" />
             <PropertyRef Name="National_Id" />
-            <PropertyRef Name="EmployeeAddress1" />
-            <PropertyRef Name="EmployeeAddress2" />
             <PropertyRef Name="Birthdate" />
             <PropertyRef Name="HiringDate" />
             <PropertyRef Name="IsDeleted" />
+            <PropertyRef Name="Gender_Id" />
+            <PropertyRef Name="Natinality_Code" />
+            <PropertyRef Name="Job_Code" />
+            <PropertyRef Name="Branch_Code" />
           </Key>
           <Property Name="National_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Gender_Name" Type="nchar" MaxLength="10" Nullable="false" />
@@ -445,16 +442,20 @@ warning 6002: The table/view 'DB_A65D4E_SolarEnergy.dbo.Employee_View' does not 
           <Property Name="JobName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Employee_Code" Type="bigint" Nullable="false" />
           <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Phone" Type="nvarchar" MaxLength="11" Nullable="false" />
-          <Property Name="Phone2" Type="nvarchar" MaxLength="11" Nullable="false" />
-          <Property Name="LandLine" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="11" />
+          <Property Name="Phone2" Type="nvarchar" MaxLength="11" />
+          <Property Name="LandLine" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
           <Property Name="National_Id" Type="nvarchar" MaxLength="14" Nullable="false" />
-          <Property Name="EmployeeAddress1" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="EmployeeAddress2" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="EmployeeAddress1" Type="nvarchar" MaxLength="100" />
+          <Property Name="EmployeeAddress2" Type="nvarchar" MaxLength="100" />
           <Property Name="Birthdate" Type="date" Nullable="false" />
           <Property Name="HiringDate" Type="date" Nullable="false" />
           <Property Name="IsDeleted" Type="int" Nullable="false" />
+          <Property Name="Gender_Id" Type="int" Nullable="false" />
+          <Property Name="Natinality_Code" Type="int" Nullable="false" />
+          <Property Name="Job_Code" Type="bigint" Nullable="false" />
+          <Property Name="Branch_Code" Type="bigint" Nullable="false" />
         </EntityType>
         <Association Name="FK_BillDocument_Supllier">
           <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
@@ -476,18 +477,6 @@ warning 6002: The table/view 'DB_A65D4E_SolarEnergy.dbo.Employee_View' does not 
               <PropertyRef Name="UserId" />
             </Principal>
             <Dependent Role="BillDocument">
-              <PropertyRef Name="Last_Modified_User" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Department_User">
-          <End Role="User" Type="Self.User" Multiplicity="0..1" />
-          <End Role="Department" Type="Self.Department" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="UserId" />
-            </Principal>
-            <Dependent Role="Department">
               <PropertyRef Name="Last_Modified_User" />
             </Dependent>
           </ReferentialConstraint>
@@ -560,30 +549,6 @@ warning 6002: The table/view 'DB_A65D4E_SolarEnergy.dbo.Employee_View' does not 
               <PropertyRef Name="UserId" />
             </Principal>
             <Dependent Role="FixInvoice">
-              <PropertyRef Name="Last_Modified_User" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Job_Department">
-          <End Role="Department" Type="Self.Department" Multiplicity="1" />
-          <End Role="Job" Type="Self.Job" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Department">
-              <PropertyRef Name="DepartmentId" />
-            </Principal>
-            <Dependent Role="Job">
-              <PropertyRef Name="Department_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Job_User">
-          <End Role="User" Type="Self.User" Multiplicity="1" />
-          <End Role="Job" Type="Self.Job" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="UserId" />
-            </Principal>
-            <Dependent Role="Job">
               <PropertyRef Name="Last_Modified_User" />
             </Dependent>
           </ReferentialConstraint>
@@ -705,18 +670,6 @@ warning 6002: The table/view 'DB_A65D4E_SolarEnergy.dbo.Employee_View' does not 
             </Principal>
             <Dependent Role="PurchaseInvoiceDetails">
               <PropertyRef Name="Last_Modified_User" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_RequestCycle_Department">
-          <End Role="Department" Type="Self.Department" Multiplicity="1" />
-          <End Role="RequestCycle" Type="Self.RequestCycle" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Department">
-              <PropertyRef Name="DepartmentId" />
-            </Principal>
-            <Dependent Role="RequestCycle">
-              <PropertyRef Name="Department_Id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -951,7 +904,11 @@ warning 6002: The table/view 'DB_A65D4E_SolarEnergy.dbo.Employee_View' does not 
     [Employee_View].[EmployeeAddress2] AS [EmployeeAddress2], 
     [Employee_View].[Birthdate] AS [Birthdate], 
     [Employee_View].[HiringDate] AS [HiringDate], 
-    [Employee_View].[IsDeleted] AS [IsDeleted]
+    [Employee_View].[IsDeleted] AS [IsDeleted], 
+    [Employee_View].[Gender_Id] AS [Gender_Id], 
+    [Employee_View].[Natinality_Code] AS [Natinality_Code], 
+    [Employee_View].[Job_Code] AS [Job_Code], 
+    [Employee_View].[Branch_Code] AS [Branch_Code]
     FROM [dbo].[Employee_View] AS [Employee_View]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK_BillDocument_Supllier" Association="Self.FK_BillDocument_Supllier">
@@ -961,10 +918,6 @@ warning 6002: The table/view 'DB_A65D4E_SolarEnergy.dbo.Employee_View' does not 
           <AssociationSet Name="FK_BillDocument_user" Association="Self.FK_BillDocument_user">
             <End Role="User" EntitySet="User" />
             <End Role="BillDocument" EntitySet="BillDocument" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Department_User" Association="Self.FK_Department_User">
-            <End Role="User" EntitySet="User" />
-            <End Role="Department" EntitySet="Department" />
           </AssociationSet>
           <AssociationSet Name="FK_DisposalDocument_Customer" Association="Self.FK_DisposalDocument_Customer">
             <End Role="Customer" EntitySet="Customer" />
@@ -989,14 +942,6 @@ warning 6002: The table/view 'DB_A65D4E_SolarEnergy.dbo.Employee_View' does not 
           <AssociationSet Name="FK_FixInvoice_User" Association="Self.FK_FixInvoice_User">
             <End Role="User" EntitySet="User" />
             <End Role="FixInvoice" EntitySet="FixInvoice" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Job_Department" Association="Self.FK_Job_Department">
-            <End Role="Department" EntitySet="Department" />
-            <End Role="Job" EntitySet="Job" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Job_User" Association="Self.FK_Job_User">
-            <End Role="User" EntitySet="User" />
-            <End Role="Job" EntitySet="Job" />
           </AssociationSet>
           <AssociationSet Name="FK_Product_ProductType" Association="Self.FK_Product_ProductType">
             <End Role="ProductType" EntitySet="ProductType" />
@@ -1037,10 +982,6 @@ warning 6002: The table/view 'DB_A65D4E_SolarEnergy.dbo.Employee_View' does not 
           <AssociationSet Name="FK_PurchaseInvoiceDetails_User" Association="Self.FK_PurchaseInvoiceDetails_User">
             <End Role="User" EntitySet="User" />
             <End Role="PurchaseInvoiceDetails" EntitySet="PurchaseInvoiceDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK_RequestCycle_Department" Association="Self.FK_RequestCycle_Department">
-            <End Role="Department" EntitySet="Department" />
-            <End Role="RequestCycle" EntitySet="RequestCycle" />
           </AssociationSet>
           <AssociationSet Name="FK_RequestCycle_Invoice" Association="Self.FK_RequestCycle_Invoice">
             <End Role="SalesInvoice" EntitySet="SalesInvoice" />
@@ -1161,18 +1102,6 @@ warning 6002: The table/view 'DB_A65D4E_SolarEnergy.dbo.Employee_View' does not 
             <End Role="User" EntitySet="Users" />
             <End Role="Customer" EntitySet="Customers" />
           </AssociationSet>
-          <AssociationSet Name="FK_Department_User" Association="DB_A65D4E_SolarEnergyModel.FK_Department_User">
-            <End Role="User" EntitySet="Users" />
-            <End Role="Department" EntitySet="Departments" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Job_Department" Association="DB_A65D4E_SolarEnergyModel.FK_Job_Department">
-            <End Role="Department" EntitySet="Departments" />
-            <End Role="Job" EntitySet="Jobs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_RequestCycle_Department" Association="DB_A65D4E_SolarEnergyModel.FK_RequestCycle_Department">
-            <End Role="Department" EntitySet="Departments" />
-            <End Role="RequestCycle" EntitySet="RequestCycles" />
-          </AssociationSet>
           <AssociationSet Name="FK_DisposalDocument_User" Association="DB_A65D4E_SolarEnergyModel.FK_DisposalDocument_User">
             <End Role="User" EntitySet="Users" />
             <End Role="DisposalDocument" EntitySet="DisposalDocuments" />
@@ -1188,10 +1117,6 @@ warning 6002: The table/view 'DB_A65D4E_SolarEnergy.dbo.Employee_View' does not 
           <AssociationSet Name="FK_FixInvoice_User" Association="DB_A65D4E_SolarEnergyModel.FK_FixInvoice_User">
             <End Role="User" EntitySet="Users" />
             <End Role="FixInvoice" EntitySet="FixInvoices" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Job_User" Association="DB_A65D4E_SolarEnergyModel.FK_Job_User">
-            <End Role="User" EntitySet="Users" />
-            <End Role="Job" EntitySet="Jobs" />
           </AssociationSet>
           <AssociationSet Name="FK_Product_ProductType" Association="DB_A65D4E_SolarEnergyModel.FK_Product_ProductType">
             <End Role="ProductType" EntitySet="ProductTypes" />
@@ -1309,12 +1234,12 @@ warning 6002: The table/view 'DB_A65D4E_SolarEnergy.dbo.Employee_View' does not 
           <Key>
             <PropertyRef Name="BranchId" />
           </Key>
-          <Property Name="BranchId" Type="Int64" Nullable="false" />
+          <Property Name="BranchId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Branch_Code" Type="Int64" Nullable="false" />
           <Property Name="BranchName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Last_Modified_Date" Type="DateTime" Precision="0" />
+          <Property Name="Last_Modified_Date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Created_Date" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Last_Modified_User" Type="Int64" />
+          <Property Name="Last_Modified_User" Type="Int64" Nullable="false" />
           <Property Name="IsDeleted" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Customer">
@@ -1345,13 +1270,10 @@ warning 6002: The table/view 'DB_A65D4E_SolarEnergy.dbo.Employee_View' does not 
           <Property Name="DepartmentId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Department_Code" Type="Int64" Nullable="false" />
           <Property Name="DepartmentName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Last_Modified_Date" Type="DateTime" Precision="0" />
+          <Property Name="Last_Modified_Date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Created_Date" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Last_Modified_User" Type="Int64" />
+          <Property Name="Last_Modified_User" Type="Int64" Nullable="false" />
           <Property Name="IsDeleted" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="User" Relationship="DB_A65D4E_SolarEnergyModel.FK_Department_User" FromRole="Department" ToRole="User" />
-          <NavigationProperty Name="Jobs" Relationship="DB_A65D4E_SolarEnergyModel.FK_Job_Department" FromRole="Department" ToRole="Job" />
-          <NavigationProperty Name="RequestCycles" Relationship="DB_A65D4E_SolarEnergyModel.FK_RequestCycle_Department" FromRole="Department" ToRole="RequestCycle" />
         </EntityType>
         <EntityType Name="Discount">
           <Key>
@@ -1397,7 +1319,6 @@ warning 6002: The table/view 'DB_A65D4E_SolarEnergy.dbo.Employee_View' does not 
           <Property Name="Natinality_Code" Type="Int32" Nullable="false" />
           <Property Name="Job_Code" Type="Int64" Nullable="false" />
           <Property Name="Branch_Code" Type="Int64" Nullable="false" />
-          <Property Name="Department_Code" Type="Int64" Nullable="false" />
           <Property Name="Created_Date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Last_Modified_Date" Type="DateTime" Precision="3" />
           <Property Name="Last_Modified_User" Type="Int64" />
@@ -1463,9 +1384,9 @@ warning 6002: The table/view 'DB_A65D4E_SolarEnergy.dbo.Employee_View' does not 
         </EntityType>
         <EntityType Name="Gender">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="Gender_Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Gender_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Gender_Name" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="Incentive">
@@ -1480,7 +1401,7 @@ warning 6002: The table/view 'DB_A65D4E_SolarEnergy.dbo.Employee_View' does not 
           <Key>
             <PropertyRef Name="JobId" />
           </Key>
-          <Property Name="JobId" Type="Int64" Nullable="false" />
+          <Property Name="JobId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Jop_Code" Type="Int64" Nullable="false" />
           <Property Name="JobName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Department_Id" Type="Int64" Nullable="false" />
@@ -1488,8 +1409,6 @@ warning 6002: The table/view 'DB_A65D4E_SolarEnergy.dbo.Employee_View' does not 
           <Property Name="Create_Date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Last_Modified_User" Type="Int64" Nullable="false" />
           <Property Name="IsDeleted" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Department" Relationship="DB_A65D4E_SolarEnergyModel.FK_Job_Department" FromRole="Job" ToRole="Department" />
-          <NavigationProperty Name="User" Relationship="DB_A65D4E_SolarEnergyModel.FK_Job_User" FromRole="Job" ToRole="User" />
         </EntityType>
         <EntityType Name="Nationality">
           <Key>
@@ -1593,7 +1512,6 @@ warning 6002: The table/view 'DB_A65D4E_SolarEnergy.dbo.Employee_View' does not 
           <Property Name="Create_Date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="IsDeleted" Type="Int32" Nullable="false" />
           <Property Name="Last_Modified_User" Type="Int64" Nullable="false" />
-          <NavigationProperty Name="Department" Relationship="DB_A65D4E_SolarEnergyModel.FK_RequestCycle_Department" FromRole="RequestCycle" ToRole="Department" />
           <NavigationProperty Name="SalesInvoice" Relationship="DB_A65D4E_SolarEnergyModel.FK_RequestCycle_Invoice" FromRole="RequestCycle" ToRole="SalesInvoice" />
           <NavigationProperty Name="User" Relationship="DB_A65D4E_SolarEnergyModel.FK_RequestCycle_User" FromRole="RequestCycle" ToRole="User" />
         </EntityType>
@@ -1736,12 +1654,10 @@ warning 6002: The table/view 'DB_A65D4E_SolarEnergy.dbo.Employee_View' does not 
           <Property Name="Last_Modified_User" Type="Int64" Nullable="false" />
           <NavigationProperty Name="BillDocuments" Relationship="DB_A65D4E_SolarEnergyModel.FK_BillDocument_user" FromRole="User" ToRole="BillDocument" />
           <NavigationProperty Name="Customers" Relationship="DB_A65D4E_SolarEnergyModel.FK_User_Customer" FromRole="User" ToRole="Customer" />
-          <NavigationProperty Name="Departments" Relationship="DB_A65D4E_SolarEnergyModel.FK_Department_User" FromRole="User" ToRole="Department" />
           <NavigationProperty Name="DisposalDocuments" Relationship="DB_A65D4E_SolarEnergyModel.FK_DisposalDocument_User" FromRole="User" ToRole="DisposalDocument" />
           <NavigationProperty Name="EndSalaries" Relationship="DB_A65D4E_SolarEnergyModel.FK_EndSalary_User" FromRole="User" ToRole="EndSalary" />
           <NavigationProperty Name="ExpensesLimits" Relationship="DB_A65D4E_SolarEnergyModel.FK_ExpensesLimit_User" FromRole="User" ToRole="ExpensesLimit" />
           <NavigationProperty Name="FixInvoices" Relationship="DB_A65D4E_SolarEnergyModel.FK_FixInvoice_User" FromRole="User" ToRole="FixInvoice" />
-          <NavigationProperty Name="Jobs" Relationship="DB_A65D4E_SolarEnergyModel.FK_Job_User" FromRole="User" ToRole="Job" />
           <NavigationProperty Name="Products" Relationship="DB_A65D4E_SolarEnergyModel.FK_Product_User" FromRole="User" ToRole="Product" />
           <NavigationProperty Name="ProductStores" Relationship="DB_A65D4E_SolarEnergyModel.FK_ProductStore_User" FromRole="User" ToRole="ProductStore" />
           <NavigationProperty Name="ProductTypes" Relationship="DB_A65D4E_SolarEnergyModel.FK_ProductType_User" FromRole="User" ToRole="ProductType" />
@@ -1784,16 +1700,14 @@ warning 6002: The table/view 'DB_A65D4E_SolarEnergy.dbo.Employee_View' does not 
             <PropertyRef Name="JobName" />
             <PropertyRef Name="Employee_Code" />
             <PropertyRef Name="EmployeeName" />
-            <PropertyRef Name="Phone" />
-            <PropertyRef Name="Phone2" />
-            <PropertyRef Name="LandLine" />
-            <PropertyRef Name="Email" />
             <PropertyRef Name="National_Id" />
-            <PropertyRef Name="EmployeeAddress1" />
-            <PropertyRef Name="EmployeeAddress2" />
             <PropertyRef Name="Birthdate" />
             <PropertyRef Name="HiringDate" />
             <PropertyRef Name="IsDeleted" />
+            <PropertyRef Name="Gender_Id" />
+            <PropertyRef Name="Natinality_Code" />
+            <PropertyRef Name="Job_Code" />
+            <PropertyRef Name="Branch_Code" />
           </Key>
           <Property Name="National_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Gender_Name" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
@@ -1802,16 +1716,20 @@ warning 6002: The table/view 'DB_A65D4E_SolarEnergy.dbo.Employee_View' does not 
           <Property Name="JobName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Employee_Code" Type="Int64" Nullable="false" />
           <Property Name="EmployeeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Phone" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
-          <Property Name="Phone2" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
-          <Property Name="LandLine" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="Phone2" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="LandLine" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="National_Id" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
-          <Property Name="EmployeeAddress1" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="EmployeeAddress2" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeAddress1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeAddress2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Birthdate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="HiringDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="IsDeleted" Type="Int32" Nullable="false" />
+          <Property Name="Gender_Id" Type="Int32" Nullable="false" />
+          <Property Name="Natinality_Code" Type="Int32" Nullable="false" />
+          <Property Name="Job_Code" Type="Int64" Nullable="false" />
+          <Property Name="Branch_Code" Type="Int64" Nullable="false" />
         </EntityType>
         <Association Name="FK_BillDocument_Supllier">
           <End Type="DB_A65D4E_SolarEnergyModel.Supplier" Role="Supplier" Multiplicity="1" />
@@ -1873,42 +1791,6 @@ warning 6002: The table/view 'DB_A65D4E_SolarEnergy.dbo.Employee_View' does not 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Department_User">
-          <End Type="DB_A65D4E_SolarEnergyModel.User" Role="User" Multiplicity="0..1" />
-          <End Type="DB_A65D4E_SolarEnergyModel.Department" Role="Department" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="UserId" />
-            </Principal>
-            <Dependent Role="Department">
-              <PropertyRef Name="Last_Modified_User" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Job_Department">
-          <End Type="DB_A65D4E_SolarEnergyModel.Department" Role="Department" Multiplicity="1" />
-          <End Type="DB_A65D4E_SolarEnergyModel.Job" Role="Job" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Department">
-              <PropertyRef Name="DepartmentId" />
-            </Principal>
-            <Dependent Role="Job">
-              <PropertyRef Name="Department_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_RequestCycle_Department">
-          <End Type="DB_A65D4E_SolarEnergyModel.Department" Role="Department" Multiplicity="1" />
-          <End Type="DB_A65D4E_SolarEnergyModel.RequestCycle" Role="RequestCycle" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Department">
-              <PropertyRef Name="DepartmentId" />
-            </Principal>
-            <Dependent Role="RequestCycle">
-              <PropertyRef Name="Department_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_DisposalDocument_User">
           <End Type="DB_A65D4E_SolarEnergyModel.User" Role="User" Multiplicity="1" />
           <End Type="DB_A65D4E_SolarEnergyModel.DisposalDocument" Role="DisposalDocument" Multiplicity="*" />
@@ -1953,18 +1835,6 @@ warning 6002: The table/view 'DB_A65D4E_SolarEnergy.dbo.Employee_View' does not 
               <PropertyRef Name="UserId" />
             </Principal>
             <Dependent Role="FixInvoice">
-              <PropertyRef Name="Last_Modified_User" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Job_User">
-          <End Type="DB_A65D4E_SolarEnergyModel.User" Role="User" Multiplicity="1" />
-          <End Type="DB_A65D4E_SolarEnergyModel.Job" Role="Job" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="UserId" />
-            </Principal>
-            <Dependent Role="Job">
               <PropertyRef Name="Last_Modified_User" />
             </Dependent>
           </ReferentialConstraint>
@@ -2354,7 +2224,6 @@ warning 6002: The table/view 'DB_A65D4E_SolarEnergy.dbo.Employee_View' does not 
                 <ScalarProperty Name="Last_Modified_User" ColumnName="Last_Modified_User" />
                 <ScalarProperty Name="Last_Modified_Date" ColumnName="Last_Modified_Date" />
                 <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
-                <ScalarProperty Name="Department_Code" ColumnName="Department_Code" />
                 <ScalarProperty Name="Branch_Code" ColumnName="Branch_Code" />
                 <ScalarProperty Name="Job_Code" ColumnName="Job_Code" />
                 <ScalarProperty Name="Natinality_Code" ColumnName="Natinality_Code" />
@@ -2435,7 +2304,7 @@ warning 6002: The table/view 'DB_A65D4E_SolarEnergy.dbo.Employee_View' does not 
             <EntityTypeMapping TypeName="DB_A65D4E_SolarEnergyModel.Gender">
               <MappingFragment StoreEntitySet="Gender">
                 <ScalarProperty Name="Gender_Name" ColumnName="Gender_Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Gender_Id" ColumnName="Gender_Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2709,6 +2578,10 @@ warning 6002: The table/view 'DB_A65D4E_SolarEnergy.dbo.Employee_View' does not 
           <EntitySetMapping Name="Employee_View">
             <EntityTypeMapping TypeName="DB_A65D4E_SolarEnergyModel.Employee_View">
               <MappingFragment StoreEntitySet="Employee_View">
+                <ScalarProperty Name="Branch_Code" ColumnName="Branch_Code" />
+                <ScalarProperty Name="Job_Code" ColumnName="Job_Code" />
+                <ScalarProperty Name="Natinality_Code" ColumnName="Natinality_Code" />
+                <ScalarProperty Name="Gender_Id" ColumnName="Gender_Id" />
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
                 <ScalarProperty Name="HiringDate" ColumnName="HiringDate" />
                 <ScalarProperty Name="Birthdate" ColumnName="Birthdate" />

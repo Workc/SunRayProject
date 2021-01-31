@@ -22,8 +22,5 @@ namespace SunRays
         public System.DateTime Create_Date { get; set; }
         public long Last_Modified_User { get; set; }
         public int IsDeleted { get; set; }
-    
-        public virtual Department Department { get; set; }
-        public virtual User User { get; set; }
     }
 }
